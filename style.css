@@ -434,25 +434,18 @@ body {
   isolation: isolate;
   background: #000000;
   color: #ffffff;
-  padding: 0 14px 100svh;
+  padding: 0 14px 0;
   margin-top: 0;
 }
 
 .services-section::after {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 84px;
-  bottom: 100svh;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.55);
-  pointer-events: none;
+  display: none;
 }
 
 .services-grid-line {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 100svh;
   width: 1px;
   background: rgba(255, 255, 255, 0.55);
   pointer-events: none;
@@ -592,6 +585,32 @@ body {
 
 #abhyanga-row .service-right {
   display: none;
+}
+
+.services-extended {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 72px 84px 72px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.services-extended-title {
+  width: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(84px, 8.1vw, 156px);
+  line-height: 0.88;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.services-extended-title span {
+  display: block;
+}
+
+.services-extended-indent {
+  padding-left: 23.5%;
 }
 
 /* BOOKING PAGE */
@@ -987,12 +1006,21 @@ body {
     right: 48px;
   }
 
-  .services-section::after {
-    right: 48px;
-  }
-
   .service-right img {
     display: none;
+  }
+
+  .services-extended {
+    min-height: 100svh;
+    padding: 56px 48px 56px 14px;
+  }
+
+  .services-extended-title {
+    font-size: clamp(64px, 7vw, 108px);
+  }
+
+  .services-extended-indent {
+    padding-left: 20%;
   }
 
   .booking-page {
@@ -1213,12 +1241,7 @@ body {
   }
 
   .services-section {
-    padding: 0 12px 100svh;
-  }
-
-  .services-section::after {
-    left: 12px;
-    right: 12px;
+    padding: 0 12px 0;
   }
 
   .services-grid-line {
@@ -1296,6 +1319,20 @@ body {
 
   .service-right {
     align-items: stretch;
+  }
+
+  .services-extended {
+    min-height: auto;
+    padding: 72px 12px 72px;
+  }
+
+  .services-extended-title {
+    font-size: clamp(42px, 11vw, 74px);
+    line-height: 0.92;
+  }
+
+  .services-extended-indent {
+    padding-left: 0;
   }
 
   .service-right img {
@@ -1481,6 +1518,10 @@ body {
 
   .service-right img {
     height: 210px;
+  }
+
+  .services-extended {
+    padding: 56px 8px 56px;
   }
 
   .booking-page {
