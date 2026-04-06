@@ -588,6 +588,7 @@ body {
 }
 
 .services-extended {
+  height: 100svh;
   min-height: 100svh;
   display: flex;
   align-items: center;
@@ -768,41 +769,55 @@ body {
 .portrait-section {
   background: #000000;
   color: #ffffff;
-  padding: 48px 38px 80px;
+  min-height: 100svh;
+  padding: 36px 54px 32px;
+  display: flex;
+  align-items: stretch;
+  --portrait-image-height: min(80svh, 920px);
 }
 
 .portrait-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  column-gap: 42px;
-  align-items: start;
+  grid-template-columns: 1.16fr 0.84fr;
+  grid-template-rows: var(--portrait-image-height) auto;
+  column-gap: 56px;
+  align-items: stretch;
 }
 
 .portrait-left {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  display: contents;
 }
 
 .portrait-quote {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  max-height: var(--portrait-image-height);
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 4.7vw, 64px);
-  line-height: 0.95;
+  font-size: clamp(54px, 4.55vw, 74px);
+  line-height: 0.92;
   font-weight: 400;
   letter-spacing: -0.05em;
   color: #ffffff;
-  max-width: 680px;
+  max-width: 740px;
+}
+
+.portrait-name-block {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  padding-top: 0;
 }
 
 .portrait-name-line {
-  margin-top: 340px;
   width: 100%;
   height: 1px;
   background: rgba(255, 255, 255, 0.75);
 }
 
 .portrait-name {
-  margin-top: 32px;
+  margin-top: 26px;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   line-height: 1.4;
@@ -811,25 +826,31 @@ body {
 }
 
 .portrait-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: contents;
 }
 
 .portrait-image-wrap {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .portrait-image {
   width: 100%;
+  height: var(--portrait-image-height);
   display: block;
   object-fit: cover;
   filter: grayscale(100%);
 }
 
 .portrait-description {
-  margin-top: 30px;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  margin-top: 0;
+  padding-top: 26px;
   max-width: 100%;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
@@ -1011,6 +1032,7 @@ body {
   }
 
   .services-extended {
+    height: 100svh;
     min-height: 100svh;
     padding: 56px 48px 56px 14px;
   }
@@ -1028,22 +1050,26 @@ body {
   }
 
   .portrait-section {
-    padding: 40px 24px 70px;
+    min-height: 100svh;
+    padding: 32px 24px 28px;
+    --portrait-image-height: min(74svh, 780px);
   }
 
   .portrait-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.08fr 0.82fr;
+    grid-template-rows: var(--portrait-image-height) auto;
     column-gap: 28px;
   }
 
   .portrait-quote {
-    font-size: clamp(34px, 4.5vw, 52px);
+    font-size: clamp(38px, 4.3vw, 56px);
     max-width: 100%;
   }
 
-  .portrait-name-line {
-    margin-top: 220px;
+  .portrait-name-block {
+    padding-top: 0;
   }
+
 }
 
 /* MOBILE */
@@ -1322,6 +1348,7 @@ body {
   }
 
   .services-extended {
+    height: auto;
     min-height: auto;
     padding: 72px 12px 72px;
   }
@@ -1378,12 +1405,29 @@ body {
   }
 
   .portrait-section {
-    padding: 32px 18px 54px;
+    min-height: auto;
+    padding: 40px 18px 48px;
   }
 
   .portrait-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     row-gap: 28px;
+  }
+
+  .portrait-left,
+  .portrait-right {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .portrait-quote,
+  .portrait-name-block,
+  .portrait-image-wrap,
+  .portrait-description {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .portrait-quote {
@@ -1391,12 +1435,13 @@ body {
     line-height: 0.98;
   }
 
-  .portrait-name-line {
-    margin-top: 48px;
+  .portrait-name-block {
+    padding-top: 28px;
   }
 
   .portrait-description {
     font-size: 11px;
+    padding-top: 20px;
   }
 }
 
@@ -1562,5 +1607,9 @@ body {
 
   .portrait-description {
     font-size: 10px;
+  }
+
+  .portrait-image {
+    height: auto;
   }
 }
