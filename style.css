@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 :root {
@@ -17,9 +18,14 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: #000000;
   color: var(--black);
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  background: #ffffff;
 }
 
 /* TOP BAR */
@@ -63,7 +69,7 @@ body {
   height: calc(100svh - var(--topbar-height));
   min-height: calc(100svh - var(--topbar-height));
   overflow: hidden;
-  background: #ddd;
+  background: #ffffff;
 }
 
 .hero-image {
@@ -465,7 +471,9 @@ body {
 }
 
 .service-row {
+  height: 100svh;
   min-height: 100svh;
+  max-height: 100svh;
   display: grid;
   grid-template-columns: 58% 42%;
   align-items: stretch;
@@ -967,7 +975,9 @@ body {
   }
 
   .service-row {
+    height: 100svh;
     min-height: 100svh;
+    max-height: 100svh;
     grid-template-columns: 56% 44%;
   }
 
@@ -1275,8 +1285,10 @@ body {
   }
 
   .service-row {
+    height: auto;
     grid-template-columns: 1fr;
     min-height: auto;
+    max-height: none;
     padding: 28px 0 36px;
     position: relative;
   }
