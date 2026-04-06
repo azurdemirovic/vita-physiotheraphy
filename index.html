@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TANGAN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">TANGAN</div>
+
+    <nav class="desktop-nav">
+      <a href="#reflexologie-section">REFLEXOLOGIE</a>
+      <a href="#massage-section">MASSAGE</a>
+      <a href="#physioscan">PHYSIOSCAN</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="#reflexologie-section">REFLEXOLOGIE</a>
+    <a href="#massage-section">MASSAGE</a>
+    <a href="#physioscan">PHYSIOSCAN</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <img src="mainpage_placeholder1.jpg" alt="Massage" class="hero-image">
+
+      <div class="hero-overlay">
+        <div class="hero-title-wrap">
+          <h1 class="hero-title">TANGAN<span>*</span></h1>
+          <p class="hero-subtitle">* LES MAINS (EN INDONÉSIEN)</p>
+        </div>
+
+        <div class="hero-bottom-nav">
+          <div class="hero-bottom-track">
+            <a href="#abhyanga-row">Massage Abhyanga</a>
+            <a href="#physioscan-row">Physioscan</a>
+            <a href="#reflexologie-row">Réflexologie plantaire</a>
+            <a href="#ayurvedique-row">Massage Ayurvédique</a>
+
+            <a href="#abhyanga-row">Massage Abhyanga</a>
+            <a href="#physioscan-row">Physioscan</a>
+            <a href="#reflexologie-row">Réflexologie plantaire</a>
+            <a href="#ayurvedique-row">Massage Ayurvédique</a>
+          </div>
+        </div>
+
+        <a href="#next-section" class="scroll-indicator" aria-label="Scroll down">
+          <span>⌄</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="next-section" class="intro-section">
+      <div class="intro-top">
+        <div class="intro-image-wrap">
+          <img src="second_placeholder.png" alt="Main sur le corps" class="intro-image">
+        </div>
+
+        <div class="intro-text-wrap">
+          <h2 class="intro-title">
+            S’arrêter,<br>
+            respirer,<br>
+            se reconnecter
+          </h2>
+
+          <p class="intro-text">
+            DIDIER MARTIN, PRATICIEN EN SOINS ÉNERGÉTIQUES, VOUS ACCUEILLE AVEC UNE
+            APPROCHE HOLISTIQUE POUR VOUS AIDER À LIBÉRER ET RELANCER VOS
+            ÉNERGIES VITALES. IL UTILISE TROIS TECHNIQUES DE SOINS COMPLÉMENTAIRES
+            POUR REPARTIR SUR DES BASES SAINES, LAISSANT AINSI AU CORPS LA
+            POSSIBILITÉ DE DÉMARRER SES MÉCANISMES D’HOMÉOSTASIE ET
+            D’ÉQUILIBRAGE.
+          </p>
+        </div>
+      </div>
+
+      <div class="intro-bottom">
+        <div class="intro-large-image-wrap">
+          <img src="third_section_placeholder2.png" alt="Massage du dos" class="intro-large-image">
+        </div>
+
+        <div class="intro-side-column">
+          <div class="intro-small-image-wrap">
+            <img src="third_section_placeholder.png" alt="Consultation" class="intro-small-image">
+          </div>
+
+          <a href="booking.html" class="intro-cta">
+            <span>PRENDRE<br>RENDEZ-VOUS</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="techniques-section">
+      <div class="techniques-inner">
+        <div class="techniques-number-wrap">
+          <span class="techniques-number" id="techniques-number">1</span>
+        </div>
+
+        <div class="techniques-text-wrap">
+          <h2 class="techniques-title">
+            Techniques<br>
+            de soin
+          </h2>
+
+          <p class="techniques-text">
+            POUR AIDER À RELANCER SON MÉCANISME D'AUTO-GUÉRISON ET
+            RETROUVER SON ÉQUILIBRE, LES SOINS PROPOSÉS PERMETTENT DE
+            NETTOYER LES ÉNERGIES STAGNANTES OU USÉES, RECHARGER,
+            RELANCER LA CIRCULATION DE CES ÉNERGIES VITALES CE QUI AIDE LE
+            CORPS DANS SON MÉCANISME D'HOMÉOSTASIE.
+          </p>
+        </div>
+      </div>
+
+      <div class="techniques-marquee">
+        <div class="techniques-marquee-track">
+          <span>Physioscan</span>
+          <span>Réflexologie plantaire</span>
+          <span>Massage Abhyanga</span>
+          <span>Physioscan</span>
+          <span>Réflexologie plantaire</span>
+          <span>Massage Abhyanga</span>
+
+          <span>Physioscan</span>
+          <span>Réflexologie plantaire</span>
+          <span>Massage Abhyanga</span>
+          <span>Physioscan</span>
+          <span>Réflexologie plantaire</span>
+          <span>Massage Abhyanga</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="massage-section">
+      <div class="services-grid-line services-grid-line-left"></div>
+      <div class="services-grid-line services-grid-line-center"></div>
+      <div class="services-grid-line services-grid-line-right"></div>
+
+      <div class="service-row" id="reflexologie-row">
+        <div class="service-left">
+          <div class="service-count">01 <span>—</span> 03</div>
+          <h2 class="service-title">Réflexologie<br>plantaire</h2>
+          <p class="service-text">
+            PRATIQUE ANCESTRALE, CETTE TECHNIQUE DE SOIN ALTERNATIVE SE
+            PRATIQUE PAR DIGIPRESSION SUR LES ZONES RÉFLEXES DU PIED AFIN DE
+            DÉTECTER ET DE LIBÉRER LES TENSIONS.
+          </p>
+        </div>
+
+        <div class="service-center">
+          <a href="booking.html?massage=reflexologie" class="service-button">
+            <span>DÉCOUVRIR<br>LE SOIN</span>
+          </a>
+        </div>
+
+        <div class="service-right" id="reflexologie-section">
+          <img src="third_section_placeholder.png" alt="Réflexologie plantaire">
+        </div>
+      </div>
+
+      <div class="service-row" id="abhyanga-row">
+        <div class="service-left">
+          <div class="service-count">02 <span>—</span> 03</div>
+          <h2 class="service-title">Massage<br>Abhyanga</h2>
+          <p class="service-text">
+            MASSAGE DE BIEN-ÊTRE CORPS ET ESPRIT. SES VERTUS ME PERMETTENT
+            DE NOURRIR, TONIFIER ET RÉ-ÉQUILIBRER L’ENSEMBLE DU CORPS DANS TOUT
+            LE CORPS TANT AU PLAN PHYSIQUE QUE MENTAL.
+          </p>
+        </div>
+
+        <div class="service-center">
+          <a href="booking.html?massage=abhyanga" class="service-button">
+            <span>DÉCOUVRIR<br>LE SOIN</span>
+          </a>
+        </div>
+
+        <div class="service-right">
+          <img src="third_section_placeholder.png" alt="Massage Abhyanga">
+        </div>
+      </div>
+
+      <div class="service-row" id="ayurvedique-row">
+        <div class="service-left">
+          <div class="service-count">03 <span>—</span> 03</div>
+          <h2 class="service-title">Massage<br>Ayurvédique</h2>
+          <p class="service-text">
+            PERMET D’OBTENIR DES INFORMATIONS PRÉCIEUSES SUR L’ÉTAT
+            ÉNERGÉTIQUE ET LE TROUBLE ÉVENTUEL DU CORPS PHYSIQUE,
+            ÉMOTIONNEL, MENTAL, ÉNERGÉTIQUE ET SPIRITUEL.
+          </p>
+        </div>
+
+        <div class="service-center">
+          <a href="booking.html?massage=ayurvedique" class="service-button">
+            <span>DÉCOUVRIR<br>LE SOIN</span>
+          </a>
+        </div>
+
+        <div class="service-right">
+          <img src="third_section_placeholder.png" alt="Massage Ayurvédique">
+        </div>
+      </div>
+    </section>
+
+    <section id="physioscan" class="content-section">
+      <h2>Physioscan</h2>
+      <p>Contenu ici...</p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact</h2>
+      <p>Contenu ici...</p>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    toggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    const techniquesNumber = document.getElementById('techniques-number');
+    const techniquesSection = document.querySelector('.techniques-section');
+    let hasCounted = false;
+
+    function runStepCounter() {
+      const values = [1, 2, 3];
+      let index = 0;
+      techniquesNumber.textContent = values[index];
+
+      const interval = setInterval(() => {
+        if (index >= values.length - 1) {
+          clearInterval(interval);
+          techniquesNumber.textContent = 3;
+          techniquesNumber.classList.remove('changing');
+          return;
+        }
+
+        techniquesNumber.classList.add('changing');
+
+        setTimeout(() => {
+          index++;
+          techniquesNumber.textContent = values[index];
+          techniquesNumber.classList.remove('changing');
+        }, 220);
+      }, 1500);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasCounted) {
+          hasCounted = true;
+          runStepCounter();
+        }
+      });
+    }, { threshold: 0.45 });
+
+    observer.observe(techniquesSection);
+  </script>
+</body>
+</html>
