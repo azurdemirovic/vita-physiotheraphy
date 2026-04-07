@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
 }
 
 :root {
@@ -70,6 +71,8 @@ main {
   min-height: calc(100svh - var(--topbar-height));
   overflow: hidden;
   background: #ffffff;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .hero-image {
@@ -208,8 +211,12 @@ main {
   grid-template-columns: 460px 1fr;
   column-gap: 95px;
   align-items: stretch;
+  height: 100svh;
   min-height: 100svh;
+  max-height: 100svh;
   padding: 72px 0 72px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .intro-image-wrap {
@@ -329,20 +336,25 @@ main {
 /* TECHNIQUES SECTION */
 .techniques-section {
   position: relative;
+  height: 100svh;
   min-height: 100vh;
+  max-height: 100svh;
   background: #000000;
   color: #ffffff;
   padding: 40px 12px 0;
   margin-bottom: 0;
   overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .techniques-inner {
-  min-height: calc(100vh - 96px);
+  height: calc(100svh - 150px);
+  min-height: calc(100svh - 150px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 40px 70px 90px;
+  padding: 40px 70px 40px;
 }
 
 .techniques-number-wrap {
@@ -478,6 +490,9 @@ main {
   grid-template-columns: 58% 42%;
   align-items: stretch;
   position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
 }
 
 .service-row::before {
@@ -602,12 +617,14 @@ main {
   align-items: center;
   padding: 72px 84px 72px 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.55);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .services-extended-title {
   width: 100%;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(84px, 8.1vw, 156px);
+  font-size: clamp(63px, 6.075vw, 117px);
   line-height: 0.88;
   font-weight: 400;
   letter-spacing: -0.05em;
@@ -777,11 +794,15 @@ main {
 .portrait-section {
   background: #000000;
   color: #ffffff;
+  height: 100svh;
   min-height: 100svh;
+  max-height: 100svh;
   padding: 36px 54px 32px;
   display: flex;
   align-items: stretch;
   --portrait-image-height: min(80svh, 920px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .portrait-grid {
@@ -899,7 +920,9 @@ main {
   .intro-top {
     grid-template-columns: 360px 1fr;
     column-gap: 56px;
+    height: 100svh;
     min-height: 100svh;
+    max-height: 100svh;
     padding: 64px 0;
   }
 
@@ -957,7 +980,9 @@ main {
   }
 
   .techniques-inner {
-    padding: 40px 40px 88px;
+    height: calc(100svh - 142px);
+    min-height: calc(100svh - 142px);
+    padding: 40px 40px 40px;
   }
 
   .techniques-title {
@@ -979,6 +1004,7 @@ main {
     min-height: 100svh;
     max-height: 100svh;
     grid-template-columns: 56% 44%;
+    overflow: hidden;
   }
 
   .service-row::before {
@@ -1048,7 +1074,7 @@ main {
   }
 
   .services-extended-title {
-    font-size: clamp(64px, 7vw, 108px);
+    font-size: clamp(48px, 5.25vw, 81px);
   }
 
   .services-extended-indent {
@@ -1060,7 +1086,9 @@ main {
   }
 
   .portrait-section {
+    height: 100svh;
     min-height: 100svh;
+    max-height: 100svh;
     padding: 32px 24px 28px;
     --portrait-image-height: min(74svh, 780px);
   }
