@@ -341,6 +341,121 @@
 
     observer.observe(techniquesSection);
 
+    const desktopSnapQuery = window.matchMedia('(min-width: 769px)');
+    let isViewportSnapping = false;
+    let activeViewportIndex = 0;
+    let scrollEndCleanup = null;
+
+    function getViewportStops() {
+      const sections = [
+        document.querySelector('.intro-section'),
+        document.querySelector('.techniques-section'),
+        ...document.querySelectorAll('.service-row'),
+        document.querySelector('.services-extended'),
+        document.querySelector('.portrait-section')
+      ].filter(Boolean);
+
+      return [0, ...sections.map(section => {
+        const rect = section.getBoundingClientRect();
+        return Math.round(rect.top + window.scrollY);
+      })];
+    }
+
+    function getClosestStopIndex(stops) {
+      const scrollTop = window.scrollY;
+      let closestIndex = 0;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      stops.forEach((stop, index) => {
+        const distance = Math.abs(stop - scrollTop);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    }
+
+    function syncActiveViewportIndex() {
+      activeViewportIndex = getClosestStopIndex(getViewportStops());
+    }
+
+    function snapToViewport(index) {
+      const stops = getViewportStops();
+      const boundedIndex = Math.max(0, Math.min(index, stops.length - 1));
+      activeViewportIndex = boundedIndex;
+      isViewportSnapping = true;
+
+      // Clean up any previous listener
+      if (scrollEndCleanup) scrollEndCleanup();
+
+      const targetTop = stops[boundedIndex];
+
+      // Use scrollend event to know when animation truly finishes
+      let settled = false;
+      function onScrollEnd() {
+        if (settled) return;
+        settled = true;
+        window.removeEventListener('scrollend', onScrollEnd);
+        clearTimeout(fallbackTimer);
+        // Re-sync from actual position after scroll finishes
+        syncActiveViewportIndex();
+        isViewportSnapping = false;
+      }
+
+      // Fallback in case scrollend doesn't fire (e.g. already at target)
+      const fallbackTimer = setTimeout(onScrollEnd, 1500);
+
+      window.addEventListener('scrollend', onScrollEnd);
+
+      scrollEndCleanup = () => {
+        window.removeEventListener('scrollend', onScrollEnd);
+        clearTimeout(fallbackTimer);
+        scrollEndCleanup = null;
+      };
+
+      // If already at the target, resolve immediately
+      if (Math.abs(window.scrollY - targetTop) < 2) {
+        onScrollEnd();
+        return;
+      }
+
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    }
+
+    syncActiveViewportIndex();
+
+    // Block ALL wheel events during snap animation (prevent browser fighting JS)
+    window.addEventListener('wheel', (event) => {
+      if (!desktopSnapQuery.matches) return;
+
+      // Always block wheel during animation
+      if (isViewportSnapping) {
+        event.preventDefault();
+        return;
+      }
+
+      if (Math.abs(event.deltaY) < 10) return;
+
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const stops = getViewportStops();
+      const nextIndex = activeViewportIndex + direction;
+
+      if (nextIndex < 0 || nextIndex >= stops.length) return;
+
+      event.preventDefault();
+      snapToViewport(nextIndex);
+    }, { passive: false });
+
+    window.addEventListener('resize', () => {
+      if (!desktopSnapQuery.matches) {
+        isViewportSnapping = false;
+        if (scrollEndCleanup) scrollEndCleanup();
+      }
+      syncActiveViewportIndex();
+    });
+
   </script>
 </body>
 </html>
