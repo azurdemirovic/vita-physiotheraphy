@@ -253,7 +253,7 @@ main {
 }
 
 .intro-section {
-  background: #f5f5f3;
+  background: #ffffff;
   padding: 0 42px 0;
 }
 
@@ -439,6 +439,10 @@ main {
   margin-bottom: 0;
   overflow: hidden;
 
+}
+
+.techniques-scroll-arrow {
+  display: none;
 }
 
 .techniques-inner {
@@ -756,7 +760,8 @@ main {
 .service-right {
   position: absolute;
   left: calc(58% + 3px);
-  right: 84px; /* match grid line right */
+  right: 84px;
+  /* match grid line right */
   top: 35%;
   height: 50%;
   z-index: 1;
@@ -840,11 +845,11 @@ main {
 
 /* BOOKING PAGE */
 .booking-page {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 42px 80px;
+  padding: 80px 42px 40px;
 }
 
 .booking-container {
@@ -854,12 +859,12 @@ main {
 
 .booking-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 6vw, 88px);
+  font-size: clamp(48px, 5.5vw, 84px);
   font-weight: 500;
   line-height: 0.92;
   letter-spacing: -0.05em;
   color: #111111;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 .booking-subtitle {
@@ -867,7 +872,7 @@ main {
   font-size: 15px;
   line-height: 1.6;
   color: #444444;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   max-width: 460px;
 }
 
@@ -941,7 +946,7 @@ main {
 
 .booking-back {
   display: inline-block;
-  margin-top: 38px;
+  margin-top: 24px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: #111111;
@@ -1312,7 +1317,29 @@ main {
 }
 
 /* MOBILE */
+.nav-overlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   :root {
     --topbar-height: 60px;
   }
@@ -1327,10 +1354,44 @@ main {
 
   .menu-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100svh;
+    background: #ffffff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .mobile-nav.open {
-    display: flex;
+    transform: translateX(0);
+  }
+
+  .mobile-nav a {
+    text-decoration: none;
+    color: #111111;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.05em;
   }
 
   .hero {
@@ -1502,6 +1563,19 @@ main {
     text-align: center;
   }
 
+  .techniques-scroll-arrow {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 34px;
+    margin-top: 22px;
+  }
+
+  .techniques-scroll-arrow span {
+    display: inline-block;
+    animation: floatArrow 1.8s ease-in-out infinite;
+  }
+
   .techniques-marquee {
     display: none;
   }
@@ -1539,15 +1613,12 @@ main {
 
   .service-left {
     padding: 0 0 24px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .service-count {
-    margin-bottom: 28px;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: left;
+    display: none;
   }
 
   .service-title {
@@ -1560,6 +1631,7 @@ main {
   }
 
   .service-text {
+    margin-top: 16px;
     max-width: 100%;
     width: 100%;
     margin-left: 0;
@@ -1575,10 +1647,10 @@ main {
     bottom: auto !important;
     top: auto !important;
     transform: none !important;
-    width: 82px;
-    height: 82px;
+    width: 110px;
+    height: 110px;
     margin: 0 0 24px 0;
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .service-row:last-child .service-button {
@@ -1597,6 +1669,7 @@ main {
   }
 
   .service-right {
+    display: block;
     position: relative;
     top: auto;
     left: auto;
@@ -1608,19 +1681,7 @@ main {
   }
 
   .services-extended {
-    height: auto;
-    min-height: auto;
-    padding: 72px 12px 72px;
-  }
-
-  .services-extended-title {
-    font-size: clamp(42px, 11vw, 74px);
-    line-height: 0.92;
-    padding: 0;
-  }
-
-  .services-extended-indent {
-    padding-left: 0;
+    display: none !important;
   }
 
   .service-right img {
@@ -1629,8 +1690,12 @@ main {
   }
 
   .booking-page {
-    padding: 80px 18px 50px;
-    align-items: flex-start;
+    padding: 60px 18px 30px;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .booking-title {
@@ -1639,7 +1704,7 @@ main {
 
   .booking-subtitle {
     font-size: 13px;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
   }
 
   .form-row {
@@ -1684,26 +1749,58 @@ main {
     min-height: 0;
   }
 
-  .portrait-quote,
-  .portrait-name-block,
-  .portrait-image-wrap,
-  .portrait-description {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
   .portrait-quote {
     font-size: clamp(34px, 10vw, 52px);
     line-height: 0.98;
+    text-align: center;
   }
 
   .portrait-name-block {
     padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portrait-name-line {
+    margin: 0 auto 12px;
+  }
+
+  .portrait-name {
+    text-align: center;
   }
 
   .portrait-description {
     font-size: 11px;
     padding-top: 20px;
+    text-align: center;
+  }
+
+  .portrait-quote {
+    font-size: clamp(34px, 10vw, 52px);
+    line-height: 0.98;
+    text-align: center;
+  }
+
+  .portrait-name-block {
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portrait-name-line {
+    margin: 0 auto 12px;
+  }
+
+  .portrait-name {
+    text-align: center;
+  }
+
+  .portrait-description {
+    font-size: 11px;
+    padding-top: 20px;
+    text-align: center;
   }
 }
 
@@ -1812,26 +1909,31 @@ main {
   }
 
   .service-text {
-    font-size: 20px;
+    font-size: 12px;
     line-height: 1.4;
   }
 
   .service-button {
-    width: 76px;
-    height: 76px;
-    font-size: 15px;
+    width: 96px;
+    height: 96px;
+    font-size: 10px;
+  }
+
+  .service-right {
+    height: 240px;
   }
 
   .service-right img {
-    height: 210px;
+    height: 100%;
+    min-height: auto;
   }
 
   .services-extended {
-    padding: 56px 8px 56px;
+    display: none !important;
   }
 
   .booking-page {
-    padding: 72px 16px 40px;
+    padding: 50px 16px 20px;
   }
 
   .booking-subtitle {
@@ -1861,14 +1963,17 @@ main {
 
   .portrait-quote {
     font-size: clamp(28px, 9vw, 40px);
+    text-align: center;
   }
 
   .portrait-name {
     font-size: 11px;
+    text-align: center;
   }
 
   .portrait-description {
     font-size: 10px;
+    text-align: center;
   }
 
   .portrait-image {

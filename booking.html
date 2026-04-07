@@ -35,6 +35,8 @@
     <a href="booking.html">KONTAKT</a>
   </nav>
 
+  <div class="nav-overlay"></div>
+
   <main class="booking-page">
     <div class="booking-container">
       <h1 class="booking-title">Zakažite<br>termin</h1>
@@ -91,15 +93,23 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
 
-    toggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
-    });
+    function toggleMenu(forceClose = false) {
+      const isOpen = forceClose ? false : mobileNav.classList.toggle('open');
+      if (forceClose) mobileNav.classList.remove('open');
+      
+      navOverlay.classList.toggle('active', isOpen);
+      toggle.textContent = isOpen ? '✕' : '☰';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', () => toggleMenu());
+
+    navOverlay.addEventListener('click', () => toggleMenu(true));
 
     document.querySelectorAll('.mobile-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-      });
+      link.addEventListener('click', () => toggleMenu(true));
     });
 
     const params = new URLSearchParams(window.location.search);

@@ -37,6 +37,8 @@
     <a href="booking.html">KONTAKT</a>
   </nav>
 
+  <div class="nav-overlay"></div>
+
   <main>
     <section class="hero">
       <img src="homepage.png" alt="Massage" class="hero-image">
@@ -114,6 +116,9 @@
             I KROZ DODATNE FIZIOTERAPIJSKE PRISTUPE, SAVREMENE METODE RADA I STRUČNO KLINIČKO ISKUSTVO, KREIRAMO
             INDIVIDUALAN PLAN TRETMANA PRILAGOĐEN VAŠEM STANJU, SIMPTOMIMA I CILJEVIMA OPORAVKA.
           </p>
+          <a href="#terapije" class="techniques-scroll-arrow" aria-label="Scroll down">
+            <span>⌄</span>
+          </a>
         </div>
       </div>
 
@@ -167,8 +172,8 @@
             <span>SAZNAJTE<br>VIŠE</span>
           </a>
         </div>
-        <div class="service-right" id="reflexologie-section">
-          <img src="bobath.png" alt="Réflexologie plantaire">
+        <div class="service-right">
+          <img src="bobath.png" alt="Bobath terapija">
         </div>
       </div>
 
@@ -318,15 +323,23 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
 
-    toggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
-    });
+    function toggleMenu(forceClose = false) {
+      const isOpen = forceClose ? false : mobileNav.classList.toggle('open');
+      if (forceClose) mobileNav.classList.remove('open');
+      
+      navOverlay.classList.toggle('active', isOpen);
+      toggle.textContent = isOpen ? '✕' : '☰';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', () => toggleMenu());
+
+    navOverlay.addEventListener('click', () => toggleMenu(true));
 
     document.querySelectorAll('.mobile-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-      });
+      link.addEventListener('click', () => toggleMenu(true));
     });
 
     const techniquesNumber = document.getElementById('techniques-number');
