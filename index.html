@@ -456,6 +456,43 @@
       syncActiveViewportIndex();
     });
 
+    // --- Navbar color switching ---
+    const topbar = document.querySelector('.topbar');
+    const heroEl = document.querySelector('.hero');
+    const darkSections = document.querySelectorAll(
+      '.techniques-section, .services-section, .services-extended, .portrait-section'
+    );
+
+    function updateNavbarColor() {
+      const navH = topbar.getBoundingClientRect().height;
+      const heroRect = heroEl.getBoundingClientRect();
+
+      // Hero is still behind the navbar → white bg, dark text
+      if (heroRect.bottom > navH * 0.5) {
+        topbar.classList.remove('topbar--transparent', 'topbar--dark');
+        return;
+      }
+
+      // Past the hero – always transparent bg
+      topbar.classList.add('topbar--transparent');
+
+      // Check if any dark section is behind the navbar
+      let onDark = false;
+      darkSections.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        if (r.top < navH && r.bottom > 0) onDark = true;
+      });
+
+      if (onDark) {
+        topbar.classList.add('topbar--dark');
+      } else {
+        topbar.classList.remove('topbar--dark');
+      }
+    }
+
+    window.addEventListener('scroll', updateNavbarColor, { passive: true });
+    updateNavbarColor();
+
   </script>
 </body>
 </html>
