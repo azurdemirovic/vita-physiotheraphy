@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FIZIOTERAPIJA VITA</title>
+  <title>Fizioterapija Vita</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,27 +18,28 @@
 <body>
 
   <header class="topbar">
-    <div class="brand">FIZIOTERAPIJA VITA</div>
+    <div class="brand"><span
+        style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span>
+      VITA</div>
 
     <nav class="desktop-nav">
       <a href="#terapije">TERAPIJE</a>
       <a href="#o-nama">O NAMA</a>
-      <a href="#kontakt">KONTAKT</a>
+      <a href="booking.html">KONTAKT</a>
     </nav>
 
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </header>
 
   <nav class="mobile-nav">
-    <a href="#reflexologie-section">REFLEXOLOGIE</a>
-    <a href="#massage-section">MASSAGE</a>
-    <a href="#physioscan">PHYSIOSCAN</a>
-    <a href="#contact">CONTACT</a>
+    <a href="#terapije">TERAPIJE</a>
+    <a href="#o-nama">O NAMA</a>
+    <a href="booking.html">KONTAKT</a>
   </nav>
 
   <main>
     <section class="hero">
-      <img src="mainpage_placeholder1.jpg" alt="Massage" class="hero-image">
+      <img src="homepage.png" alt="Massage" class="hero-image">
 
       <div class="hero-overlay">
         <div class="hero-title-wrap">
@@ -142,13 +143,13 @@
       </div>
     </section>
 
-    <section class="services-section" id="massage-section">
+    <section class="services-section" id="terapije">
       <div class="services-grid-line services-grid-line-left"></div>
       <div class="services-grid-line services-grid-line-center"></div>
       <div class="services-grid-line services-grid-line-right"></div>
 
       <!-- Service 01 -->
-      <div class="service-row" id="reflexologie-row">
+      <div class="service-row" id="bobath-row">
         <div class="service-left">
           <div class="service-count">01 <span>—</span> 05</div>
           <h2 class="service-title">
@@ -162,17 +163,17 @@
           </p>
         </div>
         <div class="service-center">
-          <a href="booking.html?massage=reflexologie" class="service-button">
+          <a href="booking.html?service=bobath" class="service-button">
             <span>SAZNAJTE<br>VIŠE</span>
           </a>
         </div>
         <div class="service-right" id="reflexologie-section">
-          <img src="third_section_placeholder.png" alt="Réflexologie plantaire">
+          <img src="bobath.png" alt="Réflexologie plantaire">
         </div>
       </div>
 
       <!-- Service 02 -->
-      <div class="service-row" id="abhyanga-row">
+      <div class="service-row" id="pnf-row">
         <div class="service-left">
           <div class="service-count">02 <span>—</span> 05</div>
           <h2 class="service-title">
@@ -187,17 +188,17 @@
           </p>
         </div>
         <div class="service-center">
-          <a href="booking.html?massage=abhyanga" class="service-button">
+          <a href="booking.html?service=pnf" class="service-button">
             <span>SAZNAJTE<br>VIŠE</span>
           </a>
         </div>
         <div class="service-right">
-          <img src="third_section_placeholder.png" alt="Massage Abhyanga">
+          <img src="pnf.png" alt="Massage Abhyanga">
         </div>
       </div>
 
       <!-- Service 03 -->
-      <div class="service-row" id="ayurvedique-row">
+      <div class="service-row" id="kaltenborn-row">
         <div class="service-left">
           <div class="service-count">03 <span>—</span> 05</div>
           <h2 class="service-title">
@@ -212,17 +213,17 @@
           </p>
         </div>
         <div class="service-center">
-          <a href="booking.html?massage=ayurvedique" class="service-button">
+          <a href="booking.html?service=kaltenborn" class="service-button">
             <span>SAZNAJTE<br>VIŠE</span>
           </a>
         </div>
         <div class="service-right">
-          <img src="third_section_placeholder.png" alt="Massage Ayurvédique">
+          <img src="kekoncept.png" alt="Massage Ayurvédique">
         </div>
       </div>
 
       <!-- Service 04 (Placeholder) -->
-      <div class="service-row">
+      <div class="service-row" id="fsn-row">
         <div class="service-left">
           <div class="service-count">04 <span>—</span> 05</div>
           <h2 class="service-title">
@@ -237,17 +238,17 @@
           </p>
         </div>
         <div class="service-center">
-          <a href="booking.html?massage=service4" class="service-button">
+          <a href="booking.html?service=fsn" class="service-button">
             <span>SAZNAJTE<br>VIŠE</span>
           </a>
         </div>
         <div class="service-right">
-          <img src="third_section_placeholder.png" alt="Service Additionnel">
+          <img src="fsn.png" alt="Service Additionnel">
         </div>
       </div>
 
       <!-- Service 05 (Placeholder) -->
-      <div class="service-row">
+      <div class="service-row" id="dry-row">
         <div class="service-left">
           <div class="service-count">05 <span>—</span> 05</div>
           <h2 class="service-title">
@@ -261,12 +262,12 @@
           </p>
         </div>
         <div class="service-center">
-          <a href="booking.html?massage=service5" class="service-button">
+          <a href="booking.html?service=dry" class="service-button">
             <span>SAZNAJTE<br>VIŠE</span>
           </a>
         </div>
         <div class="service-right">
-          <img src="third_section_placeholder.png" alt="Autre Technique">
+          <img src="dry_needling.jpg" alt="Autre Technique">
         </div>
       </div>
 
@@ -282,7 +283,7 @@
       </h2>
     </section>
 
-    <section class="portrait-section">
+    <section class="portrait-section" id="o-nama">
       <div class="portrait-grid">
         <div class="portrait-left">
           <h2 class="portrait-quote">
@@ -375,8 +376,8 @@
           requestAnimationFrame(() => {
             techniquesWrap.classList.remove('changing');
           });
-        }, 280);
-      }, 600);
+        }, 160);
+      }, 350);
     }
 
     const techObserver = new IntersectionObserver((entries) => {
@@ -506,6 +507,38 @@
         if (scrollEndCleanup) scrollEndCleanup();
       }
       syncActiveViewportIndex();
+    });
+
+    // --- Smooth Anchor Scrolling (integrates with viewport snapping) ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+        if (!targetId) return;
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return;
+
+        e.preventDefault();
+
+        const targetTop = Math.round(targetElement.getBoundingClientRect().top + window.scrollY);
+
+        if (desktopSnapQuery.matches) {
+          const stops = getViewportStops();
+          let closestIndex = 0;
+          let minDistance = Infinity;
+
+          stops.forEach((stop, index) => {
+            const distance = Math.abs(stop - targetTop);
+            if (distance < minDistance) {
+              minDistance = distance;
+              closestIndex = index;
+            }
+          });
+
+          snapToViewport(closestIndex);
+        } else {
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+        }
+      });
     });
 
     // --- Navbar color switching ---

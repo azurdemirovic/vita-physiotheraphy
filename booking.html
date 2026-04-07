@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TANGAN — Prendre rendez-vous</title>
+  <title>Fizioterapija Vita</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <header class="topbar">
-    <a href="index.html" class="brand">TANGAN</a>
+    <a href="index.html" class="brand"><span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span> VITA</a>
 
     <nav class="desktop-nav">
-      <a href="index.html#reflexologie-section">REFLEXOLOGIE</a>
-      <a href="index.html#massage-section">MASSAGE</a>
-      <a href="index.html#physioscan">PHYSIOSCAN</a>
-      <a href="index.html#contact">CONTACT</a>
+      <a href="index.html#terapije">TERAPIJE</a>
+      <a href="index.html#o-nama">O NAMA</a>
+      <a href="booking.html">KONTAKT</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <button class="menu-toggle" aria-label="Otvori meni">☰</button>
   </header>
 
   <nav class="mobile-nav">
-    <a href="index.html#reflexologie-section">REFLEXOLOGIE</a>
-    <a href="index.html#massage-section">MASSAGE</a>
-    <a href="index.html#physioscan">PHYSIOSCAN</a>
-    <a href="index.html#contact">CONTACT</a>
+    <a href="index.html#terapije">TERAPIJE</a>
+    <a href="index.html#o-nama">O NAMA</a>
+    <a href="booking.html">KONTAKT</a>
   </nav>
 
   <main class="booking-page">
     <div class="booking-container">
-      <h1 class="booking-title">Prendre<br>rendez-vous</h1>
+      <h1 class="booking-title">Zakažite<br>termin</h1>
       <p class="booking-subtitle">
-        Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.
+        Ispunite formu ispod i kontaktirat ćemo vas u najkraćem roku, <br>ili nas kontaktirajte na broj +387 61 100 039.
       </p>
 
       <form class="booking-form" action="#" method="POST">
         <div class="form-row">
           <div class="form-group">
-            <label for="service">Type de soin</label>
+            <label for="service">Vrsta terapije</label>
             <select id="service" name="service" required>
-              <option value="">Choisissez un soin</option>
-              <option value="reflexologie">Réflexologie plantaire</option>
-              <option value="abhyanga">Massage Abhyanga</option>
-              <option value="ayurvedique">Massage Ayurvédique</option>
+              <option value="">Odaberite terapiju</option>
+              <option value="bobath">Bobath terapija</option>
+              <option value="pnf">PNF concept</option>
+              <option value="kaltenborn">Kaltenborn-Evjenth</option>
+              <option value="fsn">FSN needling</option>
+              <option value="dry">Dry needling</option>
             </select>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            <label for="name">Ime</label>
+            <input type="text" id="name" name="name" placeholder="Vaše ime" required>
           </div>
 
           <div class="form-group">
-            <label for="surname">Prénom</label>
-            <input type="text" id="surname" name="surname" placeholder="Votre prénom" required>
+            <label for="surname">Prezime</label>
+            <input type="text" id="surname" name="surname" placeholder="Vaše prezime" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+            <input type="email" id="email" name="email" placeholder="vas@email.com" required>
           </div>
 
           <div class="form-group">
-            <label for="phone">Téléphone</label>
-            <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" required>
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+387 60 000 000" required>
           </div>
         </div>
 
-        <button type="submit" class="booking-button">Envoyer</button>
+        <button type="submit" class="booking-button">Pošaljite upit</button>
       </form>
 
-      <a href="index.html" class="booking-back">← Retour à l'accueil</a>
+      <a href="index.html" class="booking-back">← Povratak na početnu</a>
     </div>
   </main>
 
@@ -99,12 +103,13 @@
     });
 
     const params = new URLSearchParams(window.location.search);
-    const massage = params.get('massage');
+    const serviceParam = params.get('service');
     const serviceSelect = document.getElementById('service');
 
-    if (massage && serviceSelect) {
-      serviceSelect.value = massage;
+    if (serviceParam && serviceSelect) {
+      serviceSelect.value = serviceParam;
     }
   </script>
 </body>
+
 </html>
