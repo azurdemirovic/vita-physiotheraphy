@@ -404,11 +404,13 @@ main {
   line-height: 1.4;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .intro-cta:hover {
   transform: scale(1.06);
+  background: #ffffff;
+  color: #000000;
 }
 
 .intro-cta span {
@@ -733,6 +735,14 @@ main {
   line-height: 1.4;
   text-transform: uppercase;
   padding: 8px;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.service-button:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+  transform: translate(-50%, -50%) scale(1.06);
 }
 
 .service-row:last-child .service-button {
@@ -784,10 +794,25 @@ main {
   letter-spacing: -0.05em;
   color: #ffffff;
   padding: 72px 0;
+  overflow: hidden;
 }
 
 .services-extended-title span {
   display: block;
+  opacity: 0;
+  transform: translateY(-110%);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.services-extended-title span:nth-child(2) { transition-delay: 0.15s; }
+.services-extended-title span:nth-child(3) { transition-delay: 0.3s; }
+.services-extended-title span:nth-child(4) { transition-delay: 0.45s; }
+.services-extended-title span:nth-child(5) { transition-delay: 0.6s; }
+
+.services-extended.in-view .services-extended-title span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .services-extended-indent {
