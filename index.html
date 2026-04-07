@@ -72,9 +72,13 @@
 
         <div class="intro-text-wrap">
           <h2 class="intro-title">
-            S’arrêter,<br>
-            respirer,<br>
-            se reconnecter
+
+            <span class="intro-line">S’arrêter,</span>
+
+            <span class="intro-line">respirer,</span>
+
+            <span class="intro-line">se reconnecter</span>
+
           </h2>
 
           <p class="intro-text">
@@ -140,7 +144,10 @@
       <div class="service-row" id="reflexologie-row">
         <div class="service-left">
           <div class="service-count">01 <span>—</span> 05</div>
-          <h2 class="service-title">Réflexologie<br>plantaire</h2>
+          <h2 class="service-title">
+            <span class="service-line-down">Réflexologie</span>
+            <span class="service-line-up">plantaire</span>
+          </h2>
           <p class="service-text">
             PRATIQUE ANCESTRALE, CETTE TECHNIQUE DE SOIN ALTERNATIVE SE
             PRATIQUE PAR DIGIPRESSION SUR LES ZONES RÉFLEXES DU PIED AFIN DE
@@ -161,7 +168,10 @@
       <div class="service-row" id="abhyanga-row">
         <div class="service-left">
           <div class="service-count">02 <span>—</span> 05</div>
-          <h2 class="service-title">Massage<br>Abhyanga</h2>
+          <h2 class="service-title">
+            <span class="service-line-down">Massage</span>
+            <span class="service-line-up">Abhyanga</span>
+          </h2>
           <p class="service-text">
             MASSAGE DE BIEN-ÊTRE CORPS ET ESPRIT. SES VERTUS ME PERMETTENT
             DE NOURRIR, TONIFIER ET RÉ-ÉQUILIBRER L’ENSEMBLE DU CORPS DANS TOUT
@@ -182,7 +192,10 @@
       <div class="service-row" id="ayurvedique-row">
         <div class="service-left">
           <div class="service-count">03 <span>—</span> 05</div>
-          <h2 class="service-title">Massage<br>Ayurvédique</h2>
+          <h2 class="service-title">
+            <span class="service-line-down">Massage</span>
+            <span class="service-line-up">Ayurvédique</span>
+          </h2>
           <p class="service-text">
             PERMET D’OBTENIR DES INFORMATIONS PRÉCIEUSES SUR L’ÉTAT
             ÉNERGÉTIQUE ET LE TROUBLE ÉVENTUEL DU CORPS PHYSIQUE,
@@ -203,7 +216,10 @@
       <div class="service-row">
         <div class="service-left">
           <div class="service-count">04 <span>—</span> 05</div>
-          <h2 class="service-title">Service<br>Additionnel</h2>
+          <h2 class="service-title">
+            <span class="service-line-down">Service</span>
+            <span class="service-line-up">Additionnel</span>
+          </h2>
           <p class="service-text">
             DESCRIPTION DU SOIN COMPLÉMENTAIRE PROPOSÉ POUR UNE
             EXPÉRIENCE DE BIEN-ÊTRE TOTALE ET PERSONNALISÉE SELON
@@ -224,7 +240,10 @@
       <div class="service-row">
         <div class="service-left">
           <div class="service-count">05 <span>—</span> 05</div>
-          <h2 class="service-title">Autre<br>Technique</h2>
+          <h2 class="service-title">
+            <span class="service-line-down">Autre</span>
+            <span class="service-line-up">Technique</span>
+          </h2>
           <p class="service-text">
             UNE APPROCHE INNOVANTE POUR COMPLÉTER VOTRE PARCOURS DE
             SANTÉ HOLISTIQUE ET RENFORCER VOTRE VITALITÉ NATURELLE.
@@ -305,41 +324,68 @@
 
     const techniquesNumber = document.getElementById('techniques-number');
     const techniquesSection = document.querySelector('.techniques-section');
-    let hasCounted = false;
+    const techniquesWrap = document.querySelector('.techniques-number-wrap');
+    let counterInterval = null;
+
+    // Create echo clones behind the number
+    const echoCount = 6;
+    const echoes = [];
+    for (let i = 0; i < echoCount; i++) {
+      const echo = document.createElement('span');
+      echo.className = 'techniques-echo';
+      echo.textContent = '1';
+      const offset = (i + 1) * 4;
+      echo.style.transform = `translate(${-offset}px, ${-offset}px)`;
+      echo.style.opacity = 0.35 - (i * 0.05);
+      techniquesWrap.insertBefore(echo, techniquesNumber);
+      echoes.push(echo);
+    }
+
+    function updateAllNumbers(val) {
+      techniquesNumber.textContent = val;
+      echoes.forEach(e => e.textContent = val);
+    }
 
     function runStepCounter() {
-      const values = [1, 2, 3];
+      const values = [1, 2, 3, 4, 5];
       let index = 0;
-      techniquesNumber.textContent = values[index];
+      updateAllNumbers(values[index]);
+      techniquesWrap.classList.remove('changing');
 
-      const interval = setInterval(() => {
+      counterInterval = setInterval(() => {
         if (index >= values.length - 1) {
-          clearInterval(interval);
-          techniquesNumber.textContent = 3;
-          techniquesNumber.classList.remove('changing');
+          clearInterval(counterInterval);
+          counterInterval = null;
           return;
         }
 
-        techniquesNumber.classList.add('changing');
+        // Phase 1: fade out upward
+        techniquesWrap.classList.add('changing');
 
+        // Phase 2: swap number while invisible, then fade in
         setTimeout(() => {
           index++;
-          techniquesNumber.textContent = values[index];
-          techniquesNumber.classList.remove('changing');
-        }, 220);
-      }, 1500);
+          updateAllNumbers(values[index]);
+          requestAnimationFrame(() => {
+            techniquesWrap.classList.remove('changing');
+          });
+        }, 280);
+      }, 600);
     }
 
-    const observer = new IntersectionObserver((entries) => {
+    const techObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !hasCounted) {
-          hasCounted = true;
+        if (entry.isIntersecting) {
+          if (counterInterval) clearInterval(counterInterval);
           runStepCounter();
+        } else {
+          if (counterInterval) { clearInterval(counterInterval); counterInterval = null; }
+          updateAllNumbers('1');
         }
       });
     }, { threshold: 0.45 });
 
-    observer.observe(techniquesSection);
+    techObserver.observe(techniquesSection);
 
     const desktopSnapQuery = window.matchMedia('(min-width: 769px)');
     let isViewportSnapping = false;
@@ -492,6 +538,31 @@
 
     window.addEventListener('scroll', updateNavbarColor, { passive: true });
     updateNavbarColor();
+
+    // --- Intro section reveal (replays on re-enter) ---
+    const introSection = document.querySelector('.intro-section');
+    const introObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    introObserver.observe(introSection);
+    // --- Service rows reveal (replays on re-enter) ---
+    const serviceRows = document.querySelectorAll('.service-row');
+    const serviceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    serviceRows.forEach(row => serviceObserver.observe(row));
 
   </script>
 </body>
