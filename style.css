@@ -463,7 +463,7 @@ main {
 .services-grid-line {
   position: absolute;
   top: 0;
-  bottom: 100svh;
+  bottom: 0;
   width: 1px;
   background: rgba(255, 255, 255, 0.55);
   pointer-events: none;
@@ -611,14 +611,19 @@ main {
 }
 
 .services-extended {
-  height: 100svh;
-  min-height: 100svh;
+  background: #000000;
+  color: #ffffff;
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  flex: 0 0 100dvh;
   display: flex;
   align-items: center;
-  padding: 72px 84px 72px 14px;
+  padding: 0 84px 0 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.55);
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  overflow: hidden;
 }
 
 .services-extended-title {
@@ -629,6 +634,7 @@ main {
   font-weight: 400;
   letter-spacing: -0.05em;
   color: #ffffff;
+  padding: 72px 0;
 }
 
 .services-extended-title span {
@@ -1066,13 +1072,17 @@ main {
   }
 
   .services-extended {
-    height: 100svh;
-    min-height: 100svh;
-    padding: 56px 48px 56px 14px;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    flex: 0 0 100dvh;
+    padding: 0 48px 0 14px;
+    overflow: hidden;
   }
 
   .services-extended-title {
     font-size: clamp(48px, 5.25vw, 81px);
+    padding: 56px 0;
   }
 
   .services-extended-indent {
@@ -1394,6 +1404,7 @@ main {
   .services-extended-title {
     font-size: clamp(42px, 11vw, 74px);
     line-height: 0.92;
+    padding: 0;
   }
 
   .services-extended-indent {
