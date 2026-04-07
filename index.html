@@ -43,7 +43,7 @@
       <div class="hero-overlay">
         <div class="hero-title-wrap">
           <h1 class="hero-title">VITA<span>*</span></h1>
-          <p class="hero-subtitle">* FIZIOTERAPIJA, TUZLA</p>
+          <p class="hero-subtitle">* 20 GODINA POVJERENJA, ISKUSTVA I POSVEĆENOSTI VAŠEM OPORAVKU.</p>
         </div>
 
         <div class="hero-bottom-nav">
@@ -274,11 +274,11 @@
 
     <section class="services-extended">
       <h2 class="services-extended-title">
-        <span>LES PROCESSUS</span>
-        <span>D'AUTO-GUERISON</span>
-        <span>SE REALISENT TOUS SEULS,</span>
-        <span class="services-extended-indent">MAIS PAS SANS NOTRE</span>
-        <span class="services-extended-indent">TOTAL CONSENTEMENT.</span>
+        <span>SVAKI OPORAVAK</span>
+        <span>POČINJE PRAVILNOM PROCJENOM,</span>
+        <span>STRUČNIM PRISTUPOM</span>
+        <span class="services-extended-indent">I TERAPIJOM PRILAGOĐENOM</span>
+        <span class="services-extended-indent">VAŠIM POTREBAMA.</span>
       </h2>
     </section>
 
@@ -286,17 +286,13 @@
       <div class="portrait-grid">
         <div class="portrait-left">
           <h2 class="portrait-quote">
-            Je suis devenu un adepte
-            passionne du bien etre. Ma
-            philosophie est desormais "une
-            pause pour soi", pour s'arreter,
-            respirer, se reconnecter a soi, son
-            essentiel.
+            Naša filozofija je jednostavna: tijelo najbolje napreduje kada ga razumijemo, a ne forsiramo. Stručno
+            odabranim terapijama pomažemo Vam da se krećete sigurnije i sa više lakoće.
           </h2>
 
           <div class="portrait-name-block">
             <div class="portrait-name-line"></div>
-            <p class="portrait-name">DIDIER MARTIN</p>
+            <p class="portrait-name">DRAGO MASATOVIĆ</p>
           </div>
         </div>
 
@@ -306,12 +302,11 @@
           </div>
 
           <p class="portrait-description">
-            PHYSICIEN DE FORMATION ET DE METIER, DIDIER MARTIN A COMPRIS QUE TOUT EST ENERGIE,
-            QU'ELLE SE TROUVE DANS LE PRESENT, D'OU L'IMPORTANCE DE CETTE PAUSE. CE SONT LES
-            SOINS ENERGETIQUES QUI L'ONT AIDE A RETROUVER SON EQUILIBRE DE SANTE CORPORELLE,
-            PSYCHOLOGIQUE ET EMOTIONNELLE. CETTE NOUVELLE PRISE DE CONSCIENCE L'A DIRIGE VERS
-            LEURS APPRENTISSAGES DURANT PLUSIEURS ANNEES.
-            AUJOURD'HUI, IL VOUS ACCUEILLE AVEC TOUTE SON ATTENTION ET DANS LA BIENVEILLANCE.
+            DIPLOMIRANI FIZIOTERAPEUT SA SPECIJALIZACIJOM IZ GERONTOLOGIJE I BRIGE O STARIM LICIMA, LICENCOM IZ
+            ORTOPEDSKE MANUALNE TERAPIJE, ZVANJEM KINESIOTAPING INSTRUKTORA I SKORO 40 GODINA ISKUSTVA. PROFESIONALNO
+            ISKUSTVO STICAO JE U UKC KOŠEVO SARAJEVO, UKC TUZLA I NA POLICIJSKOJ AKADEMIJI U DOHI, A OD 2006. GODINE
+            VLASNIK JE ORDINACIJE ZA FIZIOTERAPIJU „VITA“ U TUZLI. EDUKACIJU JE STICAO NA UNIVERZITETIMA U TUZLI,
+            SARAJEVU I TRONDHEIMU, UZ BROJNE STRUČNE EDUKACIJE U BIH, HRVATSKOJ I QATARU.
           </p>
         </div>
       </div>
@@ -563,7 +558,7 @@
     }, { threshold: 0.2 });
     introObserver.observe(introSection);
     // --- Service rows reveal (replays on re-enter) ---
-    const serviceRows = document.querySelectorAll('.service-row');
+    const serviceRows = document.querySelectorAll('.service-row, .services-extended');
     const serviceObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
