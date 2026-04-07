@@ -1458,42 +1458,52 @@ main {
   }
 
   .techniques-section {
-    padding: 12px 12px 0;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    padding: 64px 12px 48px;
   }
 
   .techniques-inner {
-    min-height: calc(100vh - 78px);
+    height: auto;
+    min-height: auto;
     grid-template-columns: 1fr;
-    padding: 34px 22px 80px;
-    row-gap: 20px;
+    padding: 0 22px 0;
+    row-gap: 0;
   }
 
   .techniques-number-wrap {
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     height: auto;
   }
 
-  .techniques-number {
+  .techniques-number,
+  .techniques-echo {
     font-size: clamp(180px, 42vw, 280px);
   }
 
   .techniques-text-wrap {
     max-width: 100%;
+    margin-top: -5px;
+    text-align: center;
   }
 
   .techniques-title {
     font-size: clamp(44px, 11vw, 70px);
+    text-align: center;
   }
 
   .techniques-text {
     margin-top: 24px;
     max-width: 100%;
     font-size: 12px;
+    text-align: center;
   }
 
   .techniques-marquee {
-    height: 48px;
+    display: none;
   }
 
   .techniques-marquee-track {
@@ -1773,10 +1783,11 @@ main {
   }
 
   .techniques-inner {
-    padding: 26px 16px 74px;
+    padding: 0 16px 0;
   }
 
-  .techniques-number {
+  .techniques-number,
+  .techniques-echo {
     font-size: clamp(140px, 38vw, 220px);
   }
 
@@ -1789,7 +1800,7 @@ main {
   }
 
   .techniques-marquee {
-    height: 44px;
+    display: none;
   }
 
   .techniques-marquee-track span {
