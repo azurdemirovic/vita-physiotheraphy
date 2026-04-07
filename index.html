@@ -504,6 +504,7 @@
     }
 
     function snapToViewport(index) {
+      if (!desktopSnapQuery.matches) return;
       const stops = getViewportStops();
       const boundedIndex = Math.max(0, Math.min(index, stops.length - 1));
       activeViewportIndex = boundedIndex;
