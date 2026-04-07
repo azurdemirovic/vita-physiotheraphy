@@ -801,8 +801,6 @@ main {
   display: flex;
   align-items: stretch;
   --portrait-image-height: min(80svh, 920px);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .portrait-grid {
@@ -1651,5 +1649,8 @@ main {
 
   .portrait-image {
     height: auto;
+  }
+}
+ height: auto;
   }
 }
