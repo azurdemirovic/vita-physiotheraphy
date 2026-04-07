@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html lang="bs">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fizioterapija Vita</title>
+  <title>Zakažite Termin u Tuzli - Vita Fizioterapija</title>
+  <meta name="description"
+    content="Zakažite termin za fizikalnu terapiju u Tuzli. Jednostavna prijava za Bobath, PNF i manualne tretmane u Vita studiju.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Zakažite Termin - Fizioterapija Vita Tuzla">
+  <meta property="og:description" content="Profesionalna rehabilitacija i fizikalna terapija u Tuzli. Zakažite svoj termin online.">
+  <meta property="og:image" content="socialmedia.jpeg">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://vitasfizioterapija.ba/booking.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fizioterapija Vita Tuzla",
+    "image": "https://vitasfizioterapija.ba/socialmedia.jpeg",
+    "@id": "https://vitasfizioterapija.ba",
+    "url": "https://vitasfizioterapija.ba",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tuzla",
+      "addressRegion": "TK",
+      "addressCountry": "BA"
+    },
+    "description": "Zakažite termin za fizikalnu terapiju u Tuzli. Bobath, PNF i individualni tretmani.",
+    "founder": {
+      "@type": "Person",
+      "name": "Drago Masatović"
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,11 +78,16 @@
         Ispunite formu ispod i kontaktirat ćemo vas u najkraćem roku, <br>ili nas kontaktirajte na broj +387 61 100 039.
       </p>
 
-      <form class="booking-form" action="#" method="POST">
+      <div class="form-feedback">
+        <div data-fs-success class="success-message">Vaš upit je uspješno poslan. Kontaktirat ćemo vas uskoro!</div>
+        <div data-fs-error class="error-message">Došlo je do greške. Molimo provjerite polja i pokušajte ponovo.</div>
+      </div>
+
+      <form id="vitas-booking-form" class="booking-form" action="https://formspree.io/f/mbdpwnda" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label for="service">Vrsta terapije</label>
-            <select id="service" name="service" required>
+            <select id="service" name="Terapija" required data-fs-field>
               <option value="">Odaberite terapiju</option>
               <option value="bobath">Bobath terapija</option>
               <option value="pnf">PNF concept</option>
@@ -62,28 +101,28 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name">Ime</label>
-            <input type="text" id="name" name="name" placeholder="Vaše ime" required>
+            <input type="text" id="name" name="Ime" placeholder="Vaše ime" required data-fs-field>
           </div>
 
           <div class="form-group">
             <label for="surname">Prezime</label>
-            <input type="text" id="surname" name="surname" placeholder="Vaše prezime" required>
+            <input type="text" id="surname" name="Prezime" placeholder="Vaše prezime" required data-fs-field>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="vas@email.com" required>
+            <input type="email" id="email" name="Email" placeholder="vas@email.com" required data-fs-field>
           </div>
 
           <div class="form-group">
             <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+387 60 000 000" required>
+            <input type="tel" id="phone" name="Telefon" placeholder="+387 60 000 000" required data-fs-field>
           </div>
         </div>
 
-        <button type="submit" class="booking-button">Pošaljite upit</button>
+        <button type="submit" class="booking-button" data-fs-submit-btn>Pošaljite upit</button>
       </form>
 
       <a href="index.html" class="booking-back">← Povratak na početnu</a>
@@ -119,7 +158,12 @@
     if (serviceParam && serviceSelect) {
       serviceSelect.value = serviceParam;
     }
+
+    // Formspree Initialization
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#vitas-booking-form', formId: 'mbdpwnda' });
   </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 
 </html>

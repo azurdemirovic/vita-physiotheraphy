@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="bs">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fizioterapija Vita</title>
+  <title>Fizioterapija Vita Tuzla - Rehabilitacija i Fizikalna Terapija</title>
+  <meta name="description"
+    content="Profesionalna fizikalna terapija i rehabilitacija u Tuzli. 20 godina iskustva u Bobath terapiji, PNF-u i manualnim tretmanima. Vratite pokretljivost uz Vita studio.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Fizioterapija Vita Tuzla - Rehabilitacija">
+  <meta property="og:description"
+    content="20 godina iskustva u fizikalnoj terapiji. Bobath, PNF i i individualni pristup u Tuzli.">
+  <meta property="og:image" content="socialmedia.jpeg">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://vitasfizioterapija.ba/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fizioterapija Vita Tuzla",
+    "image": "https://vitasfizioterapija.ba/socialmedia.jpeg",
+    "@id": "https://vitasfizioterapija.ba",
+    "url": "https://vitasfizioterapija.ba",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tuzla",
+      "addressRegion": "TK",
+      "addressCountry": "BA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 44.5375,
+      "longitude": 18.6735
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/FIZIOTERAPIJAVITA"
+    ],
+    "description": "Profesionalna fizikalna terapija i rehabilitacija u Tuzli. Bobath, PNF i i individualni pristup oporavku.",
+    "founder": {
+      "@type": "Person",
+      "name": "Drago Masatović"
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +75,8 @@
 
   <header class="topbar">
     <div class="brand"><span
-        style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span>
-      VITA</div>
+        style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA
+        VITA</div>
 
     <nav class="desktop-nav">
       <a href="#terapije">TERAPIJE</a>
@@ -41,7 +97,7 @@
 
   <main>
     <section class="hero">
-      <img src="homepage.png" alt="Massage" class="hero-image">
+      <img src="homepage.png" alt="Profesionalna fizikalna terapija i rehabilitacija Vita Tuzla" class="hero-image">
 
       <div class="hero-overlay">
         <div class="hero-title-wrap">
@@ -75,7 +131,7 @@
     <section id="next-section" class="intro-section">
       <div class="intro-top">
         <div class="intro-image-wrap">
-          <img src="second_placeholder.png" alt="Main sur le corps" class="intro-image">
+          <img src="second_placeholder.png" alt="Stručna fizioterapija i manualni tretman Tuzla" class="intro-image">
         </div>
 
         <div class="intro-text-wrap">
@@ -227,7 +283,7 @@
         </div>
       </div>
 
-      <!-- Service 04 (Placeholder) -->
+      <!-- Service 04 -->
       <div class="service-row" id="fsn-row">
         <div class="service-left">
           <div class="service-count">04 <span>—</span> 05</div>
@@ -252,7 +308,7 @@
         </div>
       </div>
 
-      <!-- Service 05 (Placeholder) -->
+      <!-- Service 05 -->
       <div class="service-row" id="dry-row">
         <div class="service-left">
           <div class="service-count">05 <span>—</span> 05</div>
@@ -304,7 +360,7 @@
 
         <div class="portrait-right">
           <div class="portrait-image-wrap">
-            <img src="portrait.jpg" alt="Didier Martin" class="portrait-image">
+            <img src="portrait.jpg" alt="Drago Masatović - Iskusni diplomirani fizioterapeut u Tuzli" class="portrait-image">
           </div>
 
           <p class="portrait-description">
@@ -328,7 +384,7 @@
     function toggleMenu(forceClose = false) {
       const isOpen = forceClose ? false : mobileNav.classList.toggle('open');
       if (forceClose) mobileNav.classList.remove('open');
-      
+
       navOverlay.classList.toggle('active', isOpen);
       toggle.textContent = isOpen ? '✕' : '☰';
       document.body.style.overflow = isOpen ? 'hidden' : '';
