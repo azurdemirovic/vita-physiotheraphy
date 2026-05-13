@@ -74,22 +74,26 @@
 <body>
 
   <header class="topbar">
-    <div class="brand"><span
-        style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA
-        VITA</div>
+    <a href="index.html" class="brand"><span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span> VITA</a>
 
     <nav class="desktop-nav">
       <a href="#terapije">TERAPIJE</a>
-      <a href="#o-nama">O NAMA</a>
+      <a href="stanja.html">ŠTA TRETIRAMO</a>
+      <a href="o-nama.html">O NAMA</a>
       <a href="booking.html">KONTAKT</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <button class="menu-toggle" aria-label="Otvori meni">
+      <span class="hb"></span>
+      <span class="hb"></span>
+      <span class="hb"></span>
+    </button>
   </header>
 
   <nav class="mobile-nav">
     <a href="#terapije">TERAPIJE</a>
-    <a href="#o-nama">O NAMA</a>
+    <a href="stanja.html">ŠTA TRETIRAMO</a>
+    <a href="o-nama.html">O NAMA</a>
     <a href="booking.html">KONTAKT</a>
   </nav>
 
@@ -107,22 +111,24 @@
 
         <div class="hero-bottom-nav">
           <div class="hero-bottom-track">
-            <a href="#bobath-row">Bobath terapija</a>
-            <a href="#pnf-row">PNF concept</a>
-            <a href="#kaltenborn-row">Kaltenborn-Evjenth concept</a>
-            <a href="#fsn-row">FSN needling</a>
-            <a href="#dry-row">Dry needling</a>
+            <a href="specijalne-tehnike.html#bobath-row">Bobath terapija</a>
+            <a href="specijalne-tehnike.html#pnf-row">PNF concept</a>
+            <a href="fizikalna-terapija.html#manualna-row">Kaltenborn-Evjenth concept</a>
+            <a href="specijalne-tehnike.html#fsn-row">FSN needling</a>
+            <a href="specijalne-tehnike.html#dry-row">Dry needling</a>
 
-            <a href="#bobath-row">Bobath terapija</a>
-            <a href="#pnf-row">PNF concept</a>
-            <a href="#kaltenborn-row">Kaltenborn-Evjenth concept</a>
-            <a href="#fsn-row">FSN needling</a>
-            <a href="#dry-row">Dry needling</a>
+            <a href="specijalne-tehnike.html#bobath-row">Bobath terapija</a>
+            <a href="specijalne-tehnike.html#pnf-row">PNF concept</a>
+            <a href="fizikalna-terapija.html#manualna-row">Kaltenborn-Evjenth concept</a>
+            <a href="specijalne-tehnike.html#fsn-row">FSN needling</a>
+            <a href="specijalne-tehnike.html#dry-row">Dry needling</a>
           </div>
         </div>
 
         <a href="#next-section" class="scroll-indicator" aria-label="Scroll down">
-          <span>⌄</span>
+          <svg width="26" height="14" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L13 12L25 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
       </div>
 
@@ -181,157 +187,59 @@
       <div class="techniques-marquee">
         <div class="techniques-marquee-track">
           <span>Bobath terapija</span>
-          <span>PNF concept</span>
-          <span>Kaltenborn-Evjenth concept</span>
+          <span>PNF koncept</span>
+          <span>Kaltenborn-Evjenth</span>
           <span>FSN needling</span>
           <span>Dry needling</span>
-
+          <span>Elektroterapija</span>
+          <span>Laser terapija</span>
+          <span>Kinesiotaping</span>
+          <span>Manualna terapija</span>
+          <span>Miofascijalna terapija</span>
 
           <span>Bobath terapija</span>
-          <span>PNF concept</span>
-          <span>Kaltenborn-Evjenth concept</span>
+          <span>PNF koncept</span>
+          <span>Kaltenborn-Evjenth</span>
           <span>FSN needling</span>
           <span>Dry needling</span>
-
-
-          <span>Bobath terapija</span>
-          <span>PNF concept</span>
-          <span>Kaltenborn-Evjenth concept</span>
-          <span>FSN needling</span>
-          <span>Dry needling</span>
-
+          <span>Elektroterapija</span>
+          <span>Laser terapija</span>
+          <span>Kinesiotaping</span>
+          <span>Manualna terapija</span>
+          <span>Miofascijalna terapija</span>
         </div>
       </div>
     </section>
 
-    <section class="services-section" id="terapije">
-      <div class="services-grid-line services-grid-line-left"></div>
-      <div class="services-grid-line services-grid-line-center"></div>
-      <div class="services-grid-line services-grid-line-right"></div>
+    <section class="categories-section" id="terapije">
+      <span class="categories-label">Naše usluge</span>
 
-      <!-- Service 01 -->
-      <div class="service-row" id="bobath-row">
-        <div class="service-left">
-          <div class="service-count">01 <span>—</span> 05</div>
-          <h2 class="service-title">
-            <span class="service-line-down">Bobath</span>
-            <span class="service-line-up">terapija</span>
-          </h2>
-          <p class="service-text">
-            BOBATH TERAPIJA USMJERENA JE NA PONOVNO UČENJE PRAVILNIH OBRAZACA POKRETA KOD PACIJENATA S NEUROLOŠKIM
-            OŠTEĆENJIMA. KROZ VOĐENE POKRETE, POZICIONIRANJE I MANUALNI RAD POMAŽE U POBOLJŠANJU KONTROLE TIJELA,
-            RAVNOTEŽE I SVAKODNEVNE FUNKCIONALNOSTI.
-          </p>
+      <a href="fizikalna-terapija.html" class="category-row">
+        <div class="category-row-left">
+          <span class="category-count">01 <span>—</span> 03</span>
+          <h2 class="category-title">Fizikalna<br>terapija</h2>
         </div>
-        <div class="service-center">
-          <a href="booking.html?service=bobath" class="service-button">
-            <span>SAZNAJTE<br>VIŠE</span>
-          </a>
-        </div>
-        <div class="service-right">
-          <img src="bobath.png" alt="Bobath terapija">
-        </div>
-      </div>
+        <p class="category-sub">Elektroterapija · Laser terapija · Manualna terapija</p>
+        <span class="category-arrow">→</span>
+      </a>
 
-      <!-- Service 02 -->
-      <div class="service-row" id="pnf-row">
-        <div class="service-left">
-          <div class="service-count">02 <span>—</span> 05</div>
-          <h2 class="service-title">
-            <span class="service-line-down">PNF </span>
-            <span class="service-line-up">koncept</span>
-          </h2>
-          <p class="service-text">
-            PNF koncept je terapijska metoda koja pomaže poboljšanju snage, koordinacije, pokretljivosti i kontrole
-            pokreta kroz specifične obrasce kretanja. Terapija koristi signale iz mišića i zglobova kako bi pomogla
-            mozgu da efikasnije organizuje i vodi pokret. Posebno je korisna u rehabilitaciji osoba sa neurološkim i
-            ortopedskim problemima, kada je cilj vratiti sigurnost i funkcionalnost pokreta.
-          </p>
+      <a href="specijalne-tehnike.html" class="category-row">
+        <div class="category-row-left">
+          <span class="category-count">02 <span>—</span> 03</span>
+          <h2 class="category-title">Specijalne<br>tehnike</h2>
         </div>
-        <div class="service-center">
-          <a href="booking.html?service=pnf" class="service-button">
-            <span>SAZNAJTE<br>VIŠE</span>
-          </a>
-        </div>
-        <div class="service-right">
-          <img src="pnf.png" alt="Massage Abhyanga">
-        </div>
-      </div>
+        <p class="category-sub">Dry needling · FSN needling · Bobath · PNF · Kinesiotaping · Mobilizacija živaca · Miofascijalna terapija</p>
+        <span class="category-arrow">→</span>
+      </a>
 
-      <!-- Service 03 -->
-      <div class="service-row" id="kaltenborn-row">
-        <div class="service-left">
-          <div class="service-count">03 <span>—</span> 05</div>
-          <h2 class="service-title">
-            <span class="service-line-down">Kaltenborn-Evjenth</span>
-            <span class="service-line-up">koncept</span>
-          </h2>
-          <p class="service-text">
-            Kaltenborn-Evjenth koncept predstavlja metodu manualne terapije koja se koristi za tretman problema sa
-            zglobovima, mišićima i ograničenom pokretljivošću. Fokus terapije je na smanjenju bola, poboljšanju
-            pokretljivosti zglobova i vraćanju normalne funkcije pokreta. Ova metoda se često primjenjuje kod tegoba
-            vezanih za kičmu, rame, koljeno, kuk, vrat i druge dijelove lokomotornog sistema.
-          </p>
+      <a href="masaze.html" class="category-row">
+        <div class="category-row-left">
+          <span class="category-count">03 <span>—</span> 03</span>
+          <h2 class="category-title">Masaže</h2>
         </div>
-        <div class="service-center">
-          <a href="booking.html?service=kaltenborn" class="service-button">
-            <span>SAZNAJTE<br>VIŠE</span>
-          </a>
-        </div>
-        <div class="service-right">
-          <img src="kekoncept.png" alt="Massage Ayurvédique">
-        </div>
-      </div>
-
-      <!-- Service 04 -->
-      <div class="service-row" id="fsn-row">
-        <div class="service-left">
-          <div class="service-count">04 <span>—</span> 05</div>
-          <h2 class="service-title">
-            <span class="service-line-down">FSN</span>
-            <span class="service-line-up">needling</span>
-          </h2>
-          <p class="service-text">
-            FSN needling je savremena terapijska metoda koja koristi tanku iglu postavljenu u potkožno tkivo s ciljem
-            smanjenja bola i opuštanja napetih mišića. Za razliku od klasičnih tehnika igla ne djeluje duboko u mišiću,
-            već u površinskom sloju ispod kože, čime se postiže nježan ali efikasan terapijski učinak. Terapija se
-            koristi za poboljšanje cirkulacije, smanjenje mišićne napetosti i povećanje pokretljivosti.
-          </p>
-        </div>
-        <div class="service-center">
-          <a href="booking.html?service=fsn" class="service-button">
-            <span>SAZNAJTE<br>VIŠE</span>
-          </a>
-        </div>
-        <div class="service-right">
-          <img src="fsn.png" alt="Service Additionnel">
-        </div>
-      </div>
-
-      <!-- Service 05 -->
-      <div class="service-row" id="dry-row">
-        <div class="service-left">
-          <div class="service-count">05 <span>—</span> 05</div>
-          <h2 class="service-title">
-            <span class="service-line-down">Dry</span>
-            <span class="service-line-up">needling</span>
-          </h2>
-          <p class="service-text">
-            Dry needling je terapijska tehnika koja se u fizikalnoj terapiji koristi za tretman bolnih i napetih trigger
-            tačaka u mišićima. Ove tačke često uzrokuju lokalni bol, širenje bola u druge dijelove tijela, ukočenost i
-            smanjenu pokretljivost. Cilj terapije je opuštanje mišića, smanjenje bola i vraćanje bolje funkcije pokreta.
-          </p>
-        </div>
-        <div class="service-center">
-          <a href="booking.html?service=dry" class="service-button">
-            <span>SAZNAJTE<br>VIŠE</span>
-          </a>
-        </div>
-        <div class="service-right">
-          <img src="dry_needling.jpg" alt="Autre Technique">
-        </div>
-      </div>
-
+        <p class="category-sub">Medicinska masaža</p>
+        <span class="category-arrow">→</span>
+      </a>
     </section>
 
     <section class="services-extended">
@@ -342,36 +250,7 @@
         <span class="services-extended-indent">I TERAPIJOM PRILAGOĐENOM</span>
         <span class="services-extended-indent">VAŠIM POTREBAMA.</span>
       </h2>
-    </section>
-
-    <section class="portrait-section" id="o-nama">
-      <div class="portrait-grid">
-        <div class="portrait-left">
-          <h2 class="portrait-quote">
-            Naša filozofija je jednostavna: tijelo najbolje napreduje kada ga razumijemo, a ne forsiramo. Stručno
-            odabranim terapijama pomažemo Vam da se krećete sigurnije i sa više lakoće.
-          </h2>
-
-          <div class="portrait-name-block">
-            <div class="portrait-name-line"></div>
-            <p class="portrait-name">DRAGO MASATOVIĆ</p>
-          </div>
-        </div>
-
-        <div class="portrait-right">
-          <div class="portrait-image-wrap">
-            <img src="portrait.jpg" alt="Drago Masatović - Iskusni diplomirani fizioterapeut u Tuzli" class="portrait-image">
-          </div>
-
-          <p class="portrait-description">
-            DIPLOMIRANI FIZIOTERAPEUT SA SPECIJALIZACIJOM IZ GERONTOLOGIJE I BRIGE O STARIM LICIMA, LICENCOM IZ
-            ORTOPEDSKE MANUALNE TERAPIJE, ZVANJEM KINESIOTAPING INSTRUKTORA I SKORO 40 GODINA ISKUSTVA. PROFESIONALNO
-            ISKUSTVO STICAO JE U UKC KOŠEVO SARAJEVO, UKC TUZLA I NA POLICIJSKOJ AKADEMIJI U DOHI, A OD 2006. GODINE
-            VLASNIK JE ORDINACIJE ZA FIZIOTERAPIJU „VITA“ U TUZLI. EDUKACIJU JE STICAO NA UNIVERZITETIMA U TUZLI,
-            SARAJEVU I TRONDHEIMU, UZ BROJNE STRUČNE EDUKACIJE U BIH, HRVATSKOJ I QATARU.
-          </p>
-        </div>
-      </div>
+      <a href="o-nama.html" class="portrait-cta-button">Upoznajte nas</a>
     </section>
 
   </main>
@@ -386,7 +265,7 @@
       if (forceClose) mobileNav.classList.remove('open');
 
       navOverlay.classList.toggle('active', isOpen);
-      toggle.textContent = isOpen ? '✕' : '☰';
+      toggle.classList.toggle('is-open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     }
 
@@ -423,7 +302,7 @@
     }
 
     function runStepCounter() {
-      const values = [1, 2, 3, 4, 5];
+      const values = [1, 5, 10, 15];
       let index = 0;
       updateAllNumbers(values[index]);
       techniquesWrap.classList.remove('changing');
@@ -463,159 +342,11 @@
 
     techObserver.observe(techniquesSection);
 
-    const desktopSnapQuery = window.matchMedia('(min-width: 769px)');
-    let isViewportSnapping = false;
-    let activeViewportIndex = 0;
-    let scrollEndCleanup = null;
-
-    function getViewportStops() {
-      const sections = [
-        document.querySelector('.intro-section'),
-        document.querySelector('.techniques-section'),
-        ...document.querySelectorAll('.service-row'),
-        document.querySelector('.services-extended'),
-        document.querySelector('.portrait-section')
-      ].filter(Boolean);
-
-      return [0, ...sections.map(section => {
-        const rect = section.getBoundingClientRect();
-        return Math.round(rect.top + window.scrollY);
-      })];
-    }
-
-    function getClosestStopIndex(stops) {
-      const scrollTop = window.scrollY;
-      let closestIndex = 0;
-      let closestDistance = Number.POSITIVE_INFINITY;
-
-      stops.forEach((stop, index) => {
-        const distance = Math.abs(stop - scrollTop);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
-      });
-
-      return closestIndex;
-    }
-
-    function syncActiveViewportIndex() {
-      activeViewportIndex = getClosestStopIndex(getViewportStops());
-    }
-
-    function snapToViewport(index) {
-      if (!desktopSnapQuery.matches) return;
-      const stops = getViewportStops();
-      const boundedIndex = Math.max(0, Math.min(index, stops.length - 1));
-      activeViewportIndex = boundedIndex;
-      isViewportSnapping = true;
-
-      // Clean up any previous listener
-      if (scrollEndCleanup) scrollEndCleanup();
-
-      const targetTop = stops[boundedIndex];
-
-      // Use scrollend event to know when animation truly finishes
-      let settled = false;
-      function onScrollEnd() {
-        if (settled) return;
-        settled = true;
-        window.removeEventListener('scrollend', onScrollEnd);
-        clearTimeout(fallbackTimer);
-        // Re-sync from actual position after scroll finishes
-        syncActiveViewportIndex();
-        isViewportSnapping = false;
-      }
-
-      // Fallback in case scrollend doesn't fire (e.g. already at target)
-      const fallbackTimer = setTimeout(onScrollEnd, 1500);
-
-      window.addEventListener('scrollend', onScrollEnd);
-
-      scrollEndCleanup = () => {
-        window.removeEventListener('scrollend', onScrollEnd);
-        clearTimeout(fallbackTimer);
-        scrollEndCleanup = null;
-      };
-
-      // If already at the target, resolve immediately
-      if (Math.abs(window.scrollY - targetTop) < 2) {
-        onScrollEnd();
-        return;
-      }
-
-      window.scrollTo({ top: targetTop, behavior: 'smooth' });
-    }
-
-    syncActiveViewportIndex();
-
-    // Block ALL wheel events during snap animation (prevent browser fighting JS)
-    window.addEventListener('wheel', (event) => {
-      if (!desktopSnapQuery.matches) return;
-
-      // Always block wheel during animation
-      if (isViewportSnapping) {
-        event.preventDefault();
-        return;
-      }
-
-      if (Math.abs(event.deltaY) < 10) return;
-
-      const direction = event.deltaY > 0 ? 1 : -1;
-      const stops = getViewportStops();
-      const nextIndex = activeViewportIndex + direction;
-
-      if (nextIndex < 0 || nextIndex >= stops.length) return;
-
-      event.preventDefault();
-      snapToViewport(nextIndex);
-    }, { passive: false });
-
-    window.addEventListener('resize', () => {
-      if (!desktopSnapQuery.matches) {
-        isViewportSnapping = false;
-        if (scrollEndCleanup) scrollEndCleanup();
-      }
-      syncActiveViewportIndex();
-    });
-
-    // --- Smooth Anchor Scrolling (integrates with viewport snapping) ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href').substring(1);
-        if (!targetId) return;
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-
-        e.preventDefault();
-
-        const targetTop = Math.round(targetElement.getBoundingClientRect().top + window.scrollY);
-
-        if (desktopSnapQuery.matches) {
-          const stops = getViewportStops();
-          let closestIndex = 0;
-          let minDistance = Infinity;
-
-          stops.forEach((stop, index) => {
-            const distance = Math.abs(stop - targetTop);
-            if (distance < minDistance) {
-              minDistance = distance;
-              closestIndex = index;
-            }
-          });
-
-          snapToViewport(closestIndex);
-        } else {
-          window.scrollTo({ top: targetTop, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // --- Navbar color switching ---
+// --- Navbar color switching ---
     const topbar = document.querySelector('.topbar');
     const heroEl = document.querySelector('.hero');
     const darkSections = document.querySelectorAll(
-      '.techniques-section, .services-section, .services-extended, .portrait-section'
+      '.techniques-section, .categories-section, .services-extended'
     );
 
     function updateNavbarColor() {
@@ -660,8 +391,9 @@
       });
     }, { threshold: 0.2 });
     introObserver.observe(introSection);
-    // --- Service rows reveal (replays on re-enter) ---
-    const serviceRows = document.querySelectorAll('.service-row, .services-extended');
+
+    // --- Services extended reveal ---
+    const serviceRows = document.querySelectorAll('.services-extended');
     const serviceObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -672,6 +404,20 @@
       });
     }, { threshold: 0.2 });
     serviceRows.forEach(row => serviceObserver.observe(row));
+
+    // --- Categories section reveal (once) ---
+    const categoriesSection = document.querySelector('.categories-section');
+    if (categoriesSection) {
+      const catObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            catObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      catObserver.observe(categoriesSection);
+    }
 
   </script>
 </body>

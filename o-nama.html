@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Nama - Fizioterapija Vita Tuzla</title>
+  <meta name="description" content="Upoznajte stručni tim Vita fizioterapije u Tuzli. Drago Masatović, diplomirani fizioterapeut sa skoro 40 godina iskustva.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="https://vitasfizioterapija.ba/o-nama.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar topbar--dark">
+    <a href="index.html" class="brand"><span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span> VITA</a>
+    <nav class="desktop-nav">
+      <a href="index.html#terapije">TERAPIJE</a>
+      <a href="stanja.html">ŠTA TRETIRAMO</a>
+      <a href="o-nama.html">O NAMA</a>
+      <a href="booking.html">KONTAKT</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Otvori meni">
+      <span class="hb"></span>
+      <span class="hb"></span>
+      <span class="hb"></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html#terapije">TERAPIJE</a>
+    <a href="stanja.html">ŠTA TRETIRAMO</a>
+    <a href="o-nama.html">O NAMA</a>
+    <a href="booking.html">KONTAKT</a>
+  </nav>
+
+  <div class="nav-overlay"></div>
+
+  <main>
+    <section class="portrait-section in-view" id="o-nama" style="padding-top: 140px;">
+      <!-- Doctor 1 -->
+      <div class="portrait-grid">
+        <div class="portrait-left">
+          <h2 class="portrait-quote">
+            Naša filozofija je jednostavna: tijelo najbolje napreduje kada ga razumijemo, a ne forsiramo. Stručno odabranim terapijama pomažemo Vam da se krećete sigurnije i sa više lakoće.
+          </h2>
+          <div class="portrait-name-block">
+            <div class="portrait-name-line"></div>
+            <p class="portrait-name">DRAGO MASATOVIĆ</p>
+          </div>
+        </div>
+        <div class="portrait-right">
+          <div class="portrait-img-wrap">
+            <img src="portrait.jpg" alt="Drago Masatović - diplomirani fizioterapeut" class="portrait-img">
+          </div>
+          <p class="portrait-description">
+            DIPLOMIRANI FIZIOTERAPEUT SA SPECIJALIZACIJOM IZ GERONTOLOGIJE I BRIGE O STARIM LICIMA, LICENCOM IZ
+            ORTOPEDSKE MANUALNE TERAPIJE, ZVANJEM KINESIOTAPING INSTRUKTORA I SKORO 40 GODINA ISKUSTVA. PROFESIONALNO
+            ISKUSTVO STICAO JE U UKC KOŠEVO SARAJEVO, UKC TUZLA I NA POLICIJSKOJ AKADEMIJI U DOHI, A OD 2006. GODINE
+            VLASNIK JE ORDINACIJE ZA FIZIOTERAPIJU „VITA” U TUZLI. EDUKACIJU JE STICAO NA UNIVERZITETIMA U TUZLI,
+            SARAJEVU I TRONDHEIMU, UZ BROJNE STRUČNE EDUKACIJE U BIH, HRVATSKOJ I QATARU.
+          </p>
+        </div>
+      </div>
+
+      <!-- Doctor 2 (Placeholder) -->
+      <div class="portrait-grid portrait-grid--reverse">
+        <div class="portrait-right">
+          <div class="portrait-img-wrap">
+            <img src="portrait2.jpg" alt="Ime Drugog Doktora - diplomirani fizioterapeut" class="portrait-img">
+          </div>
+          <p class="portrait-description">
+            MAGISTRA FIZIOTERAPIJE SA VIŠEGODIŠNJIM ISKUSTVOM U OBLASTI REHABILITACIJE I FIZIOTERAPIJSKIH TRETMANA. OD SAMOG OTVARANJA ČLAN JE STRUČNOG TIMA ORDINACIJE ZA FIZIOTERAPIJU „VITA” U TUZLI, GDJE AKTIVNO DOPRINOSI INDIVIDUALNOM PRISTUPU I KVALITETNOJ NJEZI PACIJENATA. DIPLOMIRALA JE I MAGISTRIRALA NA FAKULTETU ZA FIZIOTERAPIJU U TUZLI, A SVOJE ZNANJE KONTINUIRANO USAVRŠAVA KROZ BROJNE STRUČNE EDUKACIJE I SEMINARE U BOSNI I HERCEGOVINI I HRVATSKOJ.
+          </p>
+        </div>
+        <div class="portrait-left">
+          <h2 class="portrait-quote">
+            "Vjerujemo da je ključ uspješne rehabilitacije u partnerskom odnosu s pacijentom i kontinuiranom usavršavanju naših metoda."
+          </h2>
+          <div class="portrait-name-block">
+            <div class="portrait-name-line"></div>
+            <p class="portrait-name">VESNA ALTUMBABIĆ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    function toggleMenu(forceClose = false) {
+      const isOpen = forceClose ? false : mobileNav.classList.toggle('open');
+      if (forceClose) mobileNav.classList.remove('open');
+      navOverlay.classList.toggle('active', isOpen);
+      toggle.classList.toggle('is-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', () => toggleMenu());
+    navOverlay.addEventListener('click', () => toggleMenu(true));
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(true));
+    });
+
+    const topbar = document.querySelector('.topbar');
+    const darkSections = document.querySelectorAll('.portrait-section');
+
+    function updateNavbarColor() {
+      const navH = topbar.getBoundingClientRect().height;
+      topbar.classList.add('topbar--transparent');
+      let onDark = false;
+      darkSections.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        if (r.top < navH && r.bottom > 0) onDark = true;
+      });
+      topbar.classList.toggle('topbar--dark', onDark);
+    }
+
+    window.addEventListener('scroll', updateNavbarColor, { passive: true });
+    updateNavbarColor();
+  </script>
+</body>
+
+</html>
