@@ -805,7 +805,7 @@ main {
   font-weight: 400;
   letter-spacing: -0.05em;
   color: #ffffff;
-  padding: 72px 0;
+  padding: 72px 260px 72px 0;
   overflow: hidden;
 }
 
@@ -856,8 +856,8 @@ main {
   background: #000000;
   position: absolute;
   z-index: 5;
-  right: 12%;
-  bottom: 15%;
+  right: var(--page-padding);
+  bottom: 64px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   line-height: 1.4;
@@ -1596,13 +1596,13 @@ main {
     min-height: 100dvh;
     max-height: 100dvh;
     flex: 0 0 100dvh;
-    padding: 0 48px 0 14px;
+    padding: 0 48px;
     overflow: hidden;
   }
 
   .services-extended-title {
     font-size: clamp(48px, 5.25vw, 81px);
-    padding: 56px 0;
+    padding: 56px 200px 56px 0;
   }
 
   .services-extended-indent {
@@ -1749,10 +1749,12 @@ main {
   .mobile-nav a {
     text-decoration: none;
     color: #111111;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 400;
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: 0.05em;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .hero {
@@ -1817,7 +1819,7 @@ main {
     height: auto;
     min-height: auto;
     max-height: none;
-    padding: 36px 0 32px;
+    padding: 72px 0 56px;
   }
 
   .intro-image-wrap {
@@ -1891,7 +1893,7 @@ main {
     height: auto;
     min-height: auto;
     max-height: none;
-    padding: 64px 12px 48px;
+    padding: 110px 12px 72px;
   }
 
   .techniques-inner {
@@ -1907,16 +1909,18 @@ main {
     align-items: center;
     text-align: center;
     height: auto;
+    margin-top: 12px;
   }
 
   .techniques-number,
   .techniques-echo {
     font-size: clamp(180px, 42vw, 280px);
+    margin-top: 0;
   }
 
   .techniques-text-wrap {
     max-width: 100%;
-    margin-top: -5px;
+    margin-top: 28px;
     text-align: center;
   }
 
@@ -2052,7 +2056,7 @@ main {
   .services-extended {
     height: auto;
     min-height: 100svh;
-    padding: 80px 18px;
+    padding: 96px 18px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2065,6 +2069,7 @@ main {
     font-size: clamp(38px, 9vw, 54px);
     padding: 0;
     margin-bottom: 40px;
+    width: 100%;
   }
 
   .services-extended-indent {
@@ -2075,10 +2080,11 @@ main {
     position: relative;
     right: auto;
     bottom: auto;
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 32px;
+    align-self: center;
   }
 
   .booking-page {
@@ -2124,12 +2130,17 @@ main {
   }
 
   .portrait-section {
-    padding: 56px 18px 48px;
+    padding: 56px 14px 48px;
   }
 
   .portrait-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .portrait-grid + .portrait-grid {
+    margin-top: 80px;
+    padding-top: 80px;
   }
 
   .portrait-quote {
@@ -2138,7 +2149,7 @@ main {
   }
 
   .portrait-img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .portrait-description {
@@ -2146,9 +2157,8 @@ main {
   }
 
   .categories-section {
-    padding: 48px 18px;
+    padding: 80px 18px 64px;
     justify-content: flex-start;
-    padding-top: 60px;
   }
 
   .category-row {
@@ -2195,16 +2205,29 @@ main {
   .stanja-page {
     padding: 60px 18px;
     justify-content: flex-start;
+    text-align: center;
+  }
+
+  .stanja-title,
+  .stanja-subtitle {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .stanja-grid {
     grid-template-columns: 1fr;
   }
 
+  .stanja-item {
+    padding: 24px 0;
+    text-align: center;
+  }
+
   .stanja-cta {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    text-align: center;
+    gap: 22px;
   }
 
 }
@@ -2363,11 +2386,11 @@ main {
   }
 
   .portrait-section {
-    padding: 28px 16px 46px;
+    padding: 28px 12px 46px;
   }
 
   .portrait-img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 }
 
