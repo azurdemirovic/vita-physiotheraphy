@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Šta Tretiramo - Fizioterapija Vita Tuzla</title>
+  <meta name="description" content="Bolna stanja kičme, hernije diska, bolovi u koljenu, sindrom smrznutog ramena, neurološka oboljenja i sportske povrede. Fizioterapija Vita Tuzla.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="https://vitasfizioterapija.ba/stanja.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand"><span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span> VITA</a>
+    <nav class="desktop-nav">
+      <a href="index.html#terapije">TERAPIJE</a>
+      <a href="stanja.html">ŠTA TRETIRAMO</a>
+      <a href="o-nama.html">O NAMA</a>
+      <a href="booking.html">KONTAKT</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Otvori meni">
+      <span class="hb"></span>
+      <span class="hb"></span>
+      <span class="hb"></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html#terapije">TERAPIJE</a>
+    <a href="stanja.html">ŠTA TRETIRAMO</a>
+    <a href="o-nama.html">O NAMA</a>
+    <a href="booking.html">KONTAKT</a>
+  </nav>
+
+  <div class="nav-overlay"></div>
+
+  <main>
+    <section class="stanja-page">
+      <h1 class="stanja-title">Šta<br>tretiramo</h1>
+      <p class="stanja-subtitle">
+        Svako stanje zahtijeva individualan pristup. Naša stručnost pokriva širok spektar bolnih i funkcionalnih poremećaja lokomotornog i nervnog sistema.
+      </p>
+
+      <div class="stanja-grid">
+        <div class="stanja-item">
+          <div class="stanja-item-number">01</div>
+          <div class="stanja-item-name">Bolna stanja kičmenog stuba</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">02</div>
+          <div class="stanja-item-name">Mišićna bol</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">03</div>
+          <div class="stanja-item-name">Bolovi u koljenu</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">04</div>
+          <div class="stanja-item-name">Bolovi u čeljusti</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">05</div>
+          <div class="stanja-item-name">Hernije diska</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">06</div>
+          <div class="stanja-item-name">Plantarni fascitis</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">07</div>
+          <div class="stanja-item-name">Cerviko-brahijalni sindrom</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">08</div>
+          <div class="stanja-item-name">Sindromi prenaprezanja</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">09</div>
+          <div class="stanja-item-name">Sindrom smrznutog ramena</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">10</div>
+          <div class="stanja-item-name">Pomaknuća pršljenova</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">11</div>
+          <div class="stanja-item-name">Stanja nakon moždanog udara i povreda glave</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">12</div>
+          <div class="stanja-item-name">Stanja nakon povreda lokomotornog sistema</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">13</div>
+          <div class="stanja-item-name">Multipla skleroza</div>
+        </div>
+        <div class="stanja-item">
+          <div class="stanja-item-number">14</div>
+          <div class="stanja-item-name">Glavobolje i vrtoglavice</div>
+        </div>
+      </div>
+
+      <div class="stanja-cta">
+        <p class="stanja-cta-text">
+          Niste sigurni možemo li pomoći? Kontaktirajte nas i zajedno ćemo pronaći pravi pristup za vaše stanje.
+        </p>
+        <a href="booking.html" class="stanja-cta-link">Zakažite termin</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    function toggleMenu(forceClose = false) {
+      const isOpen = forceClose ? false : mobileNav.classList.toggle('open');
+      if (forceClose) mobileNav.classList.remove('open');
+      navOverlay.classList.toggle('active', isOpen);
+      toggle.classList.toggle('is-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', () => toggleMenu());
+    navOverlay.addEventListener('click', () => toggleMenu(true));
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(true));
+    });
+
+    // --- Stanja items stagger reveal ---
+    const stanjaPage = document.querySelector('.stanja-page');
+    const stanjaItems = document.querySelectorAll('.stanja-item');
+    stanjaItems.forEach((item, i) => {
+      item.style.transitionDelay = `${i * 0.04}s`;
+    });
+    if (stanjaPage) {
+      const stanjaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            stanjaObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      stanjaObserver.observe(stanjaPage);
+    }
+  </script>
+
+
+</body>
+
+</html>

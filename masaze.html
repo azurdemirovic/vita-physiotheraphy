@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicinska Masaža Tuzla | Vita Fizioterapija</title>
+  <meta name="description" content="Medicinska masaža u Tuzli — terapeutska tehnika za liječenje mišićnih bolova, poboljšanje cirkulacije i ubrzavanje oporavka. Vita fizioterapija Tuzla.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="https://vitasfizioterapija.ba/masaze.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar topbar--dark">
+    <a href="index.html" class="brand"><span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25em; padding-right: 2px;">FIZIOTERAPIJA</span> VITA</a>
+    <nav class="desktop-nav">
+      <a href="index.html#terapije">TERAPIJE</a>
+      <a href="stanja.html">ŠTA TRETIRAMO</a>
+      <a href="o-nama.html">O NAMA</a>
+      <a href="booking.html">KONTAKT</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Otvori meni">
+      <span class="hb"></span>
+      <span class="hb"></span>
+      <span class="hb"></span>
+    </button>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html#terapije">TERAPIJE</a>
+    <a href="stanja.html">ŠTA TRETIRAMO</a>
+    <a href="o-nama.html">O NAMA</a>
+    <a href="booking.html">KONTAKT</a>
+  </nav>
+
+  <div class="nav-overlay"></div>
+
+  <main>
+    <section class="services-section">
+      <div class="services-grid-line services-grid-line-left"></div>
+      <div class="services-grid-line services-grid-line-right"></div>
+
+      <!-- Medicinska masaža -->
+      <div class="service-row" id="masaza-row">
+        <div class="service-left">
+          <div class="service-count">01 <span>—</span> 01</div>
+          <h2 class="service-title">
+            <span class="service-line-down">Medicinska</span>
+            <span class="service-line-up">masaža</span>
+          </h2>
+          <p class="service-text">
+            Medicinska masaža je terapeutska tehnika koja se primjenjuje radi liječenja mišićnih bolova, poboljšanja cirkulacije i ubrzavanja oporavka. Za razliku od relaksacijske masaže, medicinska masaža ciljano tretira specifične probleme lokomotornog sistema uz primjenu stručnih tehnika.
+          </p>
+        </div>
+        <div class="service-center">
+          <a href="booking.html?service=masaza" class="service-button">
+            <span>ZAKAŽI<br>TERMIN</span>
+          </a>
+        </div>
+        <div class="service-right service-right--subtypes">
+          <div class="service-subtypes">
+            <div class="service-subtype">Mišićna bol</div>
+            <div class="service-subtype">Poboljšanje cirkulacije</div>
+            <div class="service-subtype">Ubrzanje oporavka</div>
+            <div class="service-subtype">Smanjenje napetosti</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    function toggleMenu(forceClose = false) {
+      const isOpen = forceClose ? false : mobileNav.classList.toggle('open');
+      if (forceClose) mobileNav.classList.remove('open');
+      navOverlay.classList.toggle('active', isOpen);
+      toggle.classList.toggle('is-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', () => toggleMenu());
+    navOverlay.addEventListener('click', () => toggleMenu(true));
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(true));
+    });
+
+    const topbar = document.querySelector('.topbar');
+    const darkSections = document.querySelectorAll('.services-section');
+
+    function updateNavbarColor() {
+      const navH = topbar.getBoundingClientRect().height;
+      topbar.classList.add('topbar--transparent');
+      let onDark = false;
+      darkSections.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        if (r.top < navH && r.bottom > 0) onDark = true;
+      });
+      topbar.classList.toggle('topbar--dark', onDark);
+    }
+
+    window.addEventListener('scroll', updateNavbarColor, { passive: true });
+    updateNavbarColor();
+
+    const serviceRows = document.querySelectorAll('.service-row');
+    const serviceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+        else entry.target.classList.remove('in-view');
+      });
+    }, { threshold: 0.2 });
+    serviceRows.forEach(row => serviceObserver.observe(row));
+  </script>
+
+
+</body>
+
+</html>
