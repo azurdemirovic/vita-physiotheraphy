@@ -78,7 +78,7 @@
 
     <nav class="desktop-nav">
       <a href="#terapije">TERAPIJE</a>
-      <a href="stanja.html">ŠTA TRETIRAMO</a>
+      <a href="stanja.html">NAŠI TRETMANI</a>
       <a href="o-nama.html">O NAMA</a>
       <a href="booking.html">KONTAKT</a>
     </nav>
@@ -92,7 +92,7 @@
 
   <nav class="mobile-nav">
     <a href="#terapije">TERAPIJE</a>
-    <a href="stanja.html">ŠTA TRETIRAMO</a>
+    <a href="stanja.html">NAŠI TRETMANI</a>
     <a href="o-nama.html">O NAMA</a>
     <a href="booking.html">KONTAKT</a>
   </nav>
@@ -101,12 +101,15 @@
 
   <main>
     <section class="hero">
-      <img src="homepage.png" alt="Profesionalna fizikalna terapija i rehabilitacija Vita Tuzla" class="hero-image">
+      <picture class="hero-picture">
+        <source media="(max-width: 768px)" srcset="mobile.jpg">
+        <img src="homepage.png" alt="Profesionalna fizikalna terapija i rehabilitacija Vita Tuzla" class="hero-image">
+      </picture>
 
       <div class="hero-overlay">
         <div class="hero-title-wrap">
-          <h1 class="hero-title">VITA<span>*</span></h1>
-          <p class="hero-subtitle">* 20 GODINA POVJERENJA, ISKUSTVA I POSVEĆENOSTI VAŠEM OPORAVKU.</p>
+          <h1 class="hero-title"><img src="logo.png" alt="Vita Fizioterapija" class="hero-logo"></h1>
+          <p class="hero-subtitle">20 godina povjerenja, iskustva i posvećenosti vašem oporavku.</p>
         </div>
 
         <div class="hero-bottom-nav">
@@ -143,19 +146,21 @@
         <div class="intro-text-wrap">
           <h2 class="intro-title">
 
-            <span class="intro-line">Zajedno s Vama</span>
+            <span class="intro-line">Zajedno s vama radimo na</span>
 
-            <span class="intro-line">vraćamo pokretljivost,</span>
+            <span class="intro-line">povratku pokretljivosti,</span>
 
-            <span class="intro-line">snagu i kvalitet života.</span>
+            <span class="intro-line">snage i kvalitete života.</span>
 
           </h2>
 
           <p class="intro-text">
-            POSVEĆENI SMO TRETMANU BOLNIH STANJA LOKOMOTORNOG SISTEMA I RADU SA PACIJENTIMA SA NEUROLOŠKIM OBOLJENJIMA.
-            SVAKI TRETMAN TEMELJI SE NA PROCJENI VAŠEG STANJA I POTREBA, KAKO BISMO PRIMIJENILI PRECIZNU I EFIKASNU
-            TERAPIJU. CILJ NAM JE SMANJENJE BOLA, POBOLJŠANJE POKRETLJIVOSTI I JAČANJE TIJELA ZA SIGURNIJE I
-            KVALITETNIJE SVAKODNEVNO KRETANJE.
+            Posvećeni smo pomoći osobama koje se suočavaju s bolovima, ograničenom pokretljivošću ili neurološkim
+            poteškoćama. Vjerujemo da svaki oporavak započinje pažljivim slušanjem i razumijevanjem vaših potreba,
+            zbog čega svaki tretman prilagođavamo upravo vama.<br><br>Kroz stručnu procjenu, individualan pristup i
+            suvremene metode terapije nastojimo smanjiti bol, poboljšati pokretljivost i ojačati vaše tijelo. Naš
+            cilj nije samo ublažiti simptome, već vam pomoći da se osjećate sigurnije, krećete lakše i s više
+            samopouzdanja uživate u svakodnevnim aktivnostima.
           </p>
         </div>
       </div>
@@ -175,8 +180,8 @@
           </h2>
 
           <p class="techniques-text">
-            I KROZ DODATNE FIZIOTERAPIJSKE PRISTUPE, SAVREMENE METODE RADA I STRUČNO KLINIČKO ISKUSTVO, KREIRAMO
-            INDIVIDUALAN PLAN TRETMANA PRILAGOĐEN VAŠEM STANJU, SIMPTOMIMA I CILJEVIMA OPORAVKA.
+            Svaka osoba i svaki oporavak su jedinstveni. Zato kroz stručnu procjenu, suvremene metode rada i
+            dugogodišnje kliničko iskustvo kreiramo tretman koji je u potpunosti prilagođen vašim potrebama i ciljevima.
           </p>
           <a href="#terapije" class="techniques-scroll-arrow" aria-label="Scroll down">
             <span>⌄</span>
@@ -209,6 +214,32 @@
           <span>Miofascijalna terapija</span>
         </div>
       </div>
+
+      <div class="techniques-marquee techniques-marquee--reverse">
+        <div class="techniques-marquee-track">
+          <span>Bolna stanja kičmenog stuba</span>
+          <span>Hernije diska</span>
+          <span>Bolovi u zglobovima</span>
+          <span>Sindrom smrznutog ramena</span>
+          <span>Išijas</span>
+          <span>Plantarni fascitis</span>
+          <span>Sportske povrede</span>
+          <span>Glavobolje i vrtoglavice</span>
+          <span>Neurološka oboljenja</span>
+          <span>Stanja nakon moždanog udara</span>
+
+          <span>Bolna stanja kičmenog stuba</span>
+          <span>Hernije diska</span>
+          <span>Bolovi u zglobovima</span>
+          <span>Sindrom smrznutog ramena</span>
+          <span>Išijas</span>
+          <span>Plantarni fascitis</span>
+          <span>Sportske povrede</span>
+          <span>Glavobolje i vrtoglavice</span>
+          <span>Neurološka oboljenja</span>
+          <span>Stanja nakon moždanog udara</span>
+        </div>
+      </div>
     </section>
 
     <section class="categories-section" id="terapije">
@@ -219,7 +250,7 @@
           <span class="category-count">01 <span>—</span> 03</span>
           <h2 class="category-title">Fizikalna<br>terapija</h2>
         </div>
-        <p class="category-sub">Elektroterapija · Laser terapija · T-Care radiofrekventna · Manualna terapija</p>
+        <p class="category-sub">Elektroterapija · Laser terapija · T-Care radiofrekventna · Manualna terapija · BTL SIS · Fokusirani shock wave</p>
         <span class="category-arrow">→</span>
       </a>
 
@@ -244,11 +275,11 @@
 
     <section class="services-extended">
       <h2 class="services-extended-title">
-        <span>SVAKI OPORAVAK</span>
-        <span>POČINJE PRAVILNOM PROCJENOM,</span>
-        <span>STRUČNIM PRISTUPOM</span>
-        <span class="services-extended-indent">I TERAPIJOM PRILAGOĐENOM</span>
-        <span class="services-extended-indent">VAŠIM POTREBAMA.</span>
+        <span>VJERUJEMO DA USPJEŠAN OPORAVAK</span>
+        <span>POČINJE PAŽLJIVOM PROCJENOM,</span>
+        <span>INDIVIDUALNIM PRISTUPOM</span>
+        <span class="services-extended-indent">I TERAPIJOM KOJA JE PRILAGOĐENA</span>
+        <span class="services-extended-indent">VAŠEM JEDINSTVENOM STANJU I POTREBAMA</span>
       </h2>
       <a href="o-nama.html" class="portrait-cta-button">Upoznajte nas</a>
     </section>
