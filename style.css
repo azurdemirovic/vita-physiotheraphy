@@ -1666,17 +1666,17 @@ body:has(.menu-toggle.is-open) .menu-toggle {
   }
 
   .services-extended {
-    height: 100dvh;
+    height: auto;
     min-height: 100dvh;
-    max-height: 100dvh;
-    flex: 0 0 100dvh;
-    padding: 0 48px;
-    overflow: hidden;
+    max-height: none;
+    flex: 0 0 auto;
+    padding: 72px 48px;
+    overflow: visible;
   }
 
   .services-extended-title {
-    font-size: clamp(48px, 5.25vw, 81px);
-    padding: 56px 200px 56px 0;
+    font-size: clamp(40px, 5vw, 72px);
+    padding: 0 120px 0 0;
   }
 
   .services-extended-indent {
@@ -2129,6 +2129,8 @@ body:has(.menu-toggle.is-open) .menu-toggle {
   .services-extended {
     height: auto;
     min-height: 100svh;
+    max-height: none;
+    flex: 0 0 auto;
     padding: 96px 18px 80px;
     display: flex;
     flex-direction: column;
@@ -2136,10 +2138,11 @@ body:has(.menu-toggle.is-open) .menu-toggle {
     align-items: flex-start;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
+    overflow: visible;
   }
 
   .services-extended-title {
-    font-size: clamp(38px, 9vw, 54px);
+    font-size: clamp(28px, 7.5vw, 42px);
     padding: 0;
     margin-bottom: 40px;
     width: 100%;
